@@ -1,0 +1,235 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %} Home {% endblock %}
+
+{% block css %} <link rel="stylesheet" href="{% static 'core/css/Main.css' %}"> {% endblock %}
+
+{% block content %}
+    <div class="container" style="padding: 2rem 1rem;">
+        <div class="search-box">
+            <i data-lucide="search" class="search-icon" style="width: 1.25rem; height: 1.25rem;"></i>
+            <input type="text" class="search-input" placeholder="Search projects, tasks...">
+            <div class="btn-primary-container">
+                <button class="btn-primary">
+                    <i data-lucide="plus" style="width: 1rem; height: 1rem;"></i>
+                    <span>New Project</span>
+                </button>
+            </div>
+        </div>
+        
+        <div id="overview-tab" class="tab-content">
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stats-card">
+                    <div class="stats-card-content">
+                        <div class="stats-info">
+                            <h3>Active Projects</h3>
+                            <div class="value">{{ total_active_projects }}</div>
+                            <div class="subtitle">In progress</div>
+                            <div class="trend positive">
+                                <span>↑ 12%</span>
+                                <span style="color: #6b7280;">vs last week</span>
+                            </div>
+                        </div>
+                        <div class="stats-icon blue">
+                            <i data-lucide="folder-open" style="color: white; width: 1.5rem; height: 1.5rem;"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats-card">
+                    <div class="stats-card-content">
+                        <div class="stats-info">
+                            <h3>Team Members</h3>
+                            <div class="value">{{ total_team_members }}</div>
+                            <div class="subtitle">Total members</div>
+                        </div>
+                        <div class="stats-icon purple">
+                            <i data-lucide="users" style="color: white; width: 1.5rem; height: 1.5rem;"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats-card">
+                    <div class="stats-card-content">
+                        <div class="stats-info">
+                            <h3>Completed Tasks</h3>
+                            <div class="value">
+                                {% if total_tasks > 0 %}
+                                    {{ total_completed_tasks }}/{{ total_tasks }}
+                                {% else %}
+                                    No tasks yet
+                                {% endif %}
+                            </div>
+                            <div class="subtitle">Task completion</div>
+                            <div class="trend positive">
+                                <span>↑ 8%</span>
+                                <span style="color: #6b7280;">vs last week</span>
+                            </div>
+                        </div>
+                        <div class="stats-icon green">
+                            <i data-lucide="check-circle" style="color: white; width: 1.5rem; height: 1.5rem;"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats-card">
+                    <div class="stats-card-content">
+                        <div class="stats-info">
+                            <h3>Overall Progress</h3>
+                            <div class="value">{{ overall_progress }}%</div>
+                            <div class="subtitle">Average completion</div>
+                            <div class="trend positive">
+                                <span>↑ 5%</span>
+                                <span style="color: #6b7280;">vs last week</span>
+                            </div>
+                        </div>
+                        <div class="stats-icon orange">
+                            <i data-lucide="trending-up" style="color: white; width: 1.5rem; height: 1.5rem;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-grid">
+                <!-- Active Projects -->
+                <div class="projects-section">
+                    <h2>
+                        Active Projects
+                        <button class="btn-primary">
+                            <i data-lucide="plus" style="width: 1rem; height: 1rem;"></i>
+                            <span>New Project</span>
+                        </button>
+                    </h2>
+
+                    {% for project in active_projects %}
+                    <div class="project-card">
+                        <div class="project-header blue"></div>
+                        <div class="project-content">
+                            <div class="project-title">
+                                <div style="flex: 1;">
+                                    <h3>{{ project.project_name }}</h3>
+                                    <p>{{ project.description|truncatewords:12 }}</p>
+                                </div>
+                                <div class="status-badge {{ project.status|lower }}">
+                                    <i data-lucide="clock" style="width: 0.75rem; height: 0.75rem;"></i>
+                                    <span>{{ project.status }}</span>
+                                </div>
+                            </div>
+
+                            <div class="progress-section">
+                                <div class="progress-header">
+                                    <span class="progress-label">Progress</span>
+                                    <span class="progress-value">{{ project.progress }}%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill blue" style="width: {{ project.progress }}%;"></div>  
+                            </div>
+
+                            <div class="project-stats">
+                                <div class="project-stat">
+                                    <i data-lucide="check-circle" style="width: 1rem; height: 1rem;"></i>
+                                    <span>{{ project.completed_tasks_count }}/{{ project.total_tasks }} tasks</span>
+                                </div>
+                                <div class="project-stat">
+                                    <i data-lucide="calendar" style="width: 1rem; height: 1rem;"></i>
+                                    <span>{{ project.deadline|date:"M d, Y" }}</span>
+                                </div>
+                            </div>
+
+                            <div class="project-team">
+                                <div class="team-label">
+                                    <i data-lucide="users" style="width: 1rem; height: 1rem;"></i>
+                                    <span>Team</span>
+                                </div>
+                                <div class="team-avatars">
+                                    {% for member in project.team.members.all %}
+                                        <img src="{{ member.profile.image.url }}" alt="{{ member.get_full_name }}" class="team-avatar" title="{{ member.get_full_name }}">
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% empty %}
+                        <p>No active projects found.</p>
+                    {% endfor %}
+
+                </div>
+
+                <!-- Activity Feed -->
+                <div class="activity-feed">
+                    <h3>Recent Activity</h3>
+                    <div class="activity-list" id="activity-list">
+                        {% for activity in recent_activity %}
+                            <div class="activity-item">
+                                <div class="activity-icon {{ activity.color }}">
+                                    <i data-lucide="{{ activity.icon }}" style="width: 1rem; height: 1rem;"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <div class="activity-message">
+                                        {{ activity.user.get_full_name|default:activity.user.username }} {{ activity.message }}
+                                    </div>
+                                    <div class="activity-time">
+                                        {{ activity.timestamp|date:"n/j/Y" }}
+                                    </div>
+                                </div>
+                            </div>
+                        {% empty %}
+                            <p>No recent activity</p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects Tab -->
+        <div id="projects-tab" class="tab-content hidden">
+            <div class="projects-section">
+                <h2>
+                    All Projects
+                    <button class="btn-primary">
+                        <i data-lucide="plus" style="width: 1rem; height: 1rem;"></i>
+                        <span>New Project</span>
+                    </button>
+                </h2>
+                <div class="projects-grid" id="all-projects">
+                    <!-- Projects will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Tab -->
+        <div id="team-tab" class="tab-content hidden">
+            <div class="projects-section">
+                <h2>
+                    Team Members
+                    <button class="btn-primary">
+                        <i data-lucide="plus" style="width: 1rem; height: 1rem;"></i>
+                        <span>Add Member</span>
+                    </button>
+                </h2>
+                <div class="team-grid" id="team-grid">
+                    <!-- Team members will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Tasks Tab -->
+        <div id="tasks-tab" class="tab-content hidden">
+            <div class="projects-section">
+                <h2>
+                    All Tasks
+                    <button class="btn-primary">
+                        <i data-lucide="plus" style="width: 1rem; height: 1rem;"></i>
+                        <span>New Task</span>
+                    </button>
+                </h2>
+                <div class="tasks-list" id="tasks-list">
+                    <!-- Tasks will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+        
+    </div>
+{% endblock %}

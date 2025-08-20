@@ -1,0 +1,72 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block css %}{% endblock %}
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <title>{% block title %}ProjectHub{% endblock %}</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i data-lucide="bar-chart-3" style="color: white; width: 1.25rem; height: 1.25rem;"></i>
+                </div>
+                <span class="logo-text">ProjectHub</span>
+            </div>
+
+            <div class="nav-tabs-container">
+                <nav class="nav-tabs">
+                    <a href="#" class="nav-tab active" data-tab="overview">
+                        <i data-lucide="bar-chart-3" style="width: 1.25rem; height: 1.25rem;"></i>
+                        <span>Overview</span>
+                    </a>
+                    <a href="#" class="nav-tab" data-tab="projects">
+                        <i data-lucide="folder-open" style="width: 1.25rem; height: 1.25rem;"></i>
+                        <span>Projects</span>
+                    </a>
+                    <a href="#" class="nav-tab" data-tab="team">
+                        <i data-lucide="users" style="width: 1.25rem; height: 1.25rem;"></i>
+                        <span>Team</span>
+                    </a>
+                    <a href="#" class="nav-tab" data-tab="tasks">
+                        <i data-lucide="check-circle" style="width: 1.25rem; height: 1.25rem;"></i>
+                        <span>Tasks</span>
+                    </a>
+                </nav>
+            </div>
+
+            <div class="header-actions">
+                <button class="header-btn">
+                    <i data-lucide="bell" style="width: 1.25rem; height: 1.25rem;"></i>
+                    <span class="notification-dot"></span>
+                </button>
+                <button class="header-btn">
+                    <i data-lucide="settings" style="width: 1.25rem; height: 1.25rem;"></i>
+                </button>
+                <div class="avatar"></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container" style="padding: 2rem 1rem;">
+        {% block content %}
+
+        {% endblock %}
+    </div>
+
+    {% block scripts %}
+        <script>
+            window.addEventListener('DOMContentLoaded', () => {
+                lucide.createIcons();
+            });
+        </script>
+    {% endblock %}
+</body>
+</html>

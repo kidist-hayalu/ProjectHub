@@ -1,0 +1,226 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'core/css/Homepage.css' %}">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <title>ProjectHub</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i data-lucide="bar-chart-3" style="color: white; width: 1.25rem; height: 1.25rem;"></i>
+                </div>
+                <span class="logo-text">ProjectHub</span>
+            </div>
+
+            <div class="nav-tabs-container">
+                <nav class="nav-tabs">
+                    <a href="#" class="nav-tab active" data-tab="about">
+                        <i data-lucide="bar-chart-3" style="width: 1.25rem; height: 1.25rem;"></i>
+                        <span>About</span>
+                    </a>
+                    <a href="#contact" class="nav-tab" data-tab="contact_us">
+                        <i data-lucide="folder-open" style="width: 1.25rem; height: 1.25rem;"></i>
+                        <span>Contact Us</span>
+                    </a>
+                    <a 
+                        href="{% if user.is_authenticated %}{% url 'dashboard' %}{% else %}{% url 'login' %}{% endif %}"  
+                        class="nav-tab" 
+                        data-tab="team"
+                    >
+                        <i data-lucide="users" style="width: 1.25rem; height: 1.25rem;"></i>
+                        <span>Login</span>
+                    </a>
+                    <a href="{% url 'signup' %}" class="nav-tab" data-tab="signup">
+                        <i data-lucide="check-circle" style="width: 1.25rem; height: 1.25rem;"></i>
+                        <span>Sign Up</span>
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="welcome">
+            <h1>Setting your Project</h1>
+            <button class="startBtn" id="startBtn">Start Now</button>
+
+        </div>
+
+        <div class="promo-card">
+            <div class="promo-left">
+                <div class="promo-projects">
+                    <span class="promo-icon">
+                        <i data-lucide="target"></i>
+                    </span>
+                    <span class="promo-projects-text">Projects</span>
+                </div>
+                <h2 class="promo-title">Keep every plan on track.</h2>
+                <a href="#" class="promo-arrow">
+                    <i data-lucide="arrow-right"></i>
+                </a>
+            </div>
+            <div class="promo-right">
+                <div class="promo-checklist">
+                    <div class="promo-face">
+
+                    </div>
+                    <div class="promo-checklist-content">
+                        <div class="promo-checklist-title">Checklist</div>
+                        <ul>
+                            <li><strong>Pre-launch</strong></li>
+                            <li><input type="checkbox" checked disabled> Test backup systems</li>
+                            <li><input type="checkbox" checked disabled> Run final system diagnostics</li>
+                            <li><input type="checkbox" disabled> Confirm launch mode</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="promo-launch">
+                    <div class="promo-launch-title">Launch tracker</div>
+                    <div class="promo-launch-tags">
+                        <span>Timeline</span>
+                        <span>Teams</span>
+                    </div>
+                    <ul>
+                        <li><span class="beta-release">🚩 Beta release</span></li>
+                        <li><span class="staging">Staging &amp; internal previews</span></li>
+                        <li><span class="final-qa">🐞 Final QA</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="slider-wrapper">
+            <div class="slider">
+                <div class="slide" id="slide1"><img src="{% static 'core/assets/tracking2.webp' %}" alt="Slide 1"></div>
+                <div class="slide" id="slide2"><img src="{% static 'core/assets/tracker3.webp' %}" alt="Slide 2"></div>
+                <div class="slide" id="slide3"><img src="{% static 'core/assets/tracker4.webp' %}" alt="Slide 3"></div>
+                <div class="slide" id="slide4"><img src="{% static 'core/assets/tracking1.webp' %}" alt="Slide 4"></div>
+            </div>
+            <div class="slider-nav">
+                <a href="#slide1"></a>
+                <a href="#slide2"></a>
+                <a href="#slide3"></a>
+                <a href="#slide4"></a>
+            </div>
+        </div>
+        <div class="promo-card">
+            <div class="promo-left">
+                <div class="promo-projects">
+                    <span class="promo-icon">
+                        <i data-lucide="target"></i>
+                    </span>
+                    <span class="promo-projects-text">Projects</span>
+                </div>
+                <h2 class="promo-title">Keep every plan on track.</h2>
+                <a href="#" class="promo-arrow">
+                    <i data-lucide="arrow-right"></i>
+                </a>
+            </div>
+            <div class="promo-right">
+                <div class="promo-checklist">
+                    <div class="promo-face">
+
+                    </div>
+                    <div class="promo-checklist-content">
+                        <div class="promo-checklist-title">Checklist</div>
+                        <ul>
+                            <li><strong>Pre-launch</strong></li>
+                            <li><input type="checkbox" checked disabled> Test backup systems</li>
+                            <li><input type="checkbox" checked disabled> Run final system diagnostics</li>
+                            <li><input type="checkbox" disabled> Confirm launch mode</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="promo-launch">
+                    <div class="promo-launch-title">Launch tracker</div>
+                    <div class="promo-launch-tags">
+                        <span>Timeline</span>
+                        <span>Teams</span>
+                    </div>
+                    <ul>
+                        <li><span class="beta-release">🚩 Beta release</span></li>
+                        <li><span class="staging">Staging &amp; internal previews</span></li>
+                        <li><span class="final-qa">🐞 Final QA</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section1">
+                
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-nav">
+        <div class="footer-main">
+            <div class="footer-brand-social">
+                <div class="footer-logo">
+                    <div class="logo-icon">
+                        <i data-lucide="bar-chart-3" style="color: white; width: 1.25rem; height: 1.25rem;"></i>
+                    </div>
+                    <span class="footer-logo-text">ProjectHub</span>
+                </div>
+                <div class="footer-social-icons">
+                    <a href="#"><i data-lucide="instagram"></i></a>
+                    <a href="#"><i data-lucide="x"></i></a>
+                    <a href="#"><i data-lucide="linkedin"></i></a>
+                    <a href="#"><i data-lucide="facebook"></i></a>
+                    <a href="#"><i data-lucide="youtube"></i></a>
+                </div>
+                
+                <div class="footer-privacy">
+                    <p>We do not sell or share your personal information</p>
+                    <a href="#">Cookie settings</a>
+                </div>
+                <div class="footer-copyright">
+                    <i data-lucide="copyright"></i> 2025 ProjectHub, Inc.
+                </div>
+            </div>
+            <div class="footer-links">
+                <div>
+                    <div class="footer-link-title">Company</div>
+                    <a href="#">About us</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Security</a>
+                    <a href="#">Status</a>
+                    <a href="#">Terms & privacy</a>
+                    <a href="#">Your privacy rights</a>
+                </div>
+                <div>
+                    <div class="footer-link-title">Resources</div>
+                    <a href="#">Help center</a>
+                    <a href="#">Pricing</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Community</a>
+                    <a href="#">Integrations</a>
+                    <a href="#">Affiliates</a>
+                </div>
+                <div>
+                    <div class="footer-link-title">For</div>
+                    <a href="#">Enterprise</a>
+                    <a href="#">Small business</a>
+                    <a href="#">Personal</a>
+                    <a href="#" class="footer-explore">Explore more &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+
+    <script src="{% static 'core/js/Homepage.js' %}"></script>
+</body>
+
+</html>
