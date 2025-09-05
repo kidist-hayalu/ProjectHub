@@ -9,12 +9,12 @@ function Lists() {
         { id: 4, name: 'Reports' },
         { id: 5, name: 'Settings' }];
 
-    const navBarItems = navBar.map((bar) => <li key={bar.id} className="navBarItems">{bar.name}</li>);
+    const navBarItems = navBar.map((bar) => <li key={bar.id} className="navBarItems hover:scale-90">{bar.name}</li>);
     return (
         <div className="sticky top-0">
             <nav className="nav py-2">
                 <div className="mr-96 flex justify-normal">
-                    <div className="flex-1 justify-self-start bg-gradient-to-tr from-blue-500 via-blue-500 to-blue-600 rounded ">
+                    <div className="flex-1 justify-self-start bg-gradient-to-tr from-blue-500 via-blue-500 to-blue-600 rounded">
                         <BarChart3Icon style={{ color: "white", width: `1.65rem`, height: `1.65rem` }} />
                     </div>
                     <div className="flex-1 text-2xl font-bold ">

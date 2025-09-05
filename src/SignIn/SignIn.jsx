@@ -51,7 +51,7 @@ function SignIn() {
                 <input type="text" value={email} onChange={changeEmail} placeholder="Enter your Email" className="my-2 border-solid border-black w-5/6 px-2 rounded" />
                 <input type="password" value={password} onChange={changePassword} placeholder="Enter Password" className="my-2 border-solid border-black w-5/6 px-2 rounded" />
                 <input type="password" value={confirm} onChange={changeConfirm} placeholder="Confirm Password" className="my-2 border-solid border-black w-5/6 px-2 rounded" />
-                <Link to={"/"}>
+                <Link to={"/Dashboard"}>
                     <button onClick={handleClick} className="my-2">Sign In</button>
                 </Link>
             </div>

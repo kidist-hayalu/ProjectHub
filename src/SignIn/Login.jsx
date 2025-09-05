@@ -43,7 +43,7 @@ function Login() {
 
                             </div>
                             <div className="flex flex-col items-center justify-center my-3">
-                                <Link to={'/'}>
+                                <Link to={'/Dashboard'}>
                                     <button className="mb-2" onClick={(e) => { e.preventDefault(); /*wrongPassword(email, password);*/ }}>Login</button>
                                 </Link>
 

@@ -10,9 +10,11 @@ import NotFound from './NotFound.jsx'
 import Report from './Report/Report.jsx'
 import Chart from "./Report/Chart.jsx"
 import Login from './SignIn/Login.jsx'
+import Homepage from './Homepage/Homepage.jsx'
 
 const router = createBrowserRouter([
-  {path: "/", element: <Project />},
+  {path: "/", element: <Homepage />},
+  {path: "/Dashboard", element: <Project />},
   {path: "/Login", element: <Login />},
   {path: "/SignIn", element: <SignIn />},
   {path: "/Report", element: <Report />},
