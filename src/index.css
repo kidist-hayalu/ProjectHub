@@ -97,3 +97,7 @@ button:hover {
 .p-sortable-column-icon{
   display: none !important;
 }
+
+.rotated{
+  transform: rotate(45deg);
+}

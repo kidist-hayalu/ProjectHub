@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css'
 import Chart from '../Report/Chart.jsx';
 import { motion } from 'framer-motion';
+import Stacks from './stacks.jsx';
 
 
 function Homepage() {
@@ -21,15 +22,22 @@ function Homepage() {
                         <Link to={'/Login'} className='text-white '>Start project</Link>
                     </div>
                 </div>
-                
-                <div className='flex flex-row px-10  my-4'>
-                    <div className='w-3/5 border-2 border-blue-500 border-dashed'>
-                        <h1 className='p-10'>Where you can get the better sight of your projects</h1>
+                <div className='flex flex-row pr-20  my-4'>
+
+
+                    <div className='p-0 h-full flex flex-col items-center justify-center text-black my-24 rounded-md mr-80 w-4/6'>
+                        <Stacks />
                     </div>
 
-                    <motion.div className='p-10 flex flex-col items-center justify-center bg-slate-500 text-white w-1/5 h-full my-24 rounded-md ml-10'
+
+
+
+
+
+
+                    <motion.div className='p-10 ml-36 flex flex-col items-center justify-self-end border-2 border-blue-500 text-black h-full my-24 rounded-md w-2/6'
                         whileInView={{ scale: [1, 1, 1, 1], rotate: [0, -15, 0, 0] }}
-                        viewport={{once:true, amount: 0.5}}
+                        viewport={{ once: true, amount: 0.5 }}
                         transition={{ duration: 5, ease: "easeInOut", repeat: Infinity, repeatDelay: 1 }}>
                         <h1 className='text-2xl font-bold text-center'>Our Journey</h1>
                         <p>We have started becoming better as people but never fixing our behaviour</p>
@@ -40,9 +48,9 @@ function Homepage() {
                     <div className='p-10 ml-10 flex flex-col items-center justify-center w-4/5'>
                         <div className="relative flex items-center justify-center w-full h-full">
                             <div className="absolute inset-0 z-10 bg-red-500 w-full h-full origin-left transition transform duration-500 hover:scale-x-[1.2]"></div>
-                            <div className="absolute inset-0 z-[15] bg-green-500 w-5/6 h-full origin-left transition transform duration-500 hover:scale-x-[1.2]"></div>
-                            <div className="absolute inset-0 z-20 bg-cyan-500 w-4/6 h-full origin-left transition transform duration-500 hover:scale-x-[1.25]"></div>
-                            <div className="absolute z-[25] inset-0  p-4 bg-blue-500 rounded w-3/6 h-full origin-left transform transition duration-500 hover:scale-x-[1.2] overflow-hidden"></div>
+                            <div className="absolute inset-0 z-[15] bg-green-500 w-4/6 h-full origin-left transition transform duration-500 hover:scale-x-[1.2]"></div>
+                            <div className="absolute inset-0 z-20 bg-cyan-500 w-2/6 h-full origin-left transition transform duration-500 hover:scale-x-[1.25]"></div>
+                            <div className="absolute z-[25] inset-0  p-4 bg-blue-500 rounded w-1/6 h-full origin-left transform transition duration-500 hover:scale-x-[1.2] overflow-hidden"></div>
                             <div className='absolute z-[30] inset-0 flex items-center justify-center p-4 pointer-events-none w-3/6'>
                                 <p className='text-white'>Explore Various options to Collaborating with teammates</p>
 
