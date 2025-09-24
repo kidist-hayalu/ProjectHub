@@ -45,13 +45,13 @@ function Homepage() {
                     </motion.div>
                 </div>
                 <div className='flex flex-row h-screen px-10'>
-                    <div className='p-10 ml-10 flex flex-col items-center justify-center w-4/5'>
+                    <div className='p-10 ml-10 flex flex-col items-center justify-center w-full'>
                         <div className="relative flex items-center justify-center w-full h-full">
-                            <div className="absolute inset-0 z-10 bg-blue-600 w-full h-full origin-left transition transform duration-500 hover:scale-x-[1.2]"></div>
-                            <div className="absolute inset-0 z-[15] bg-blue-700 w-4/6 h-full origin-left transition transform duration-500 hover:scale-x-[1.2]"></div>
-                            <div className="absolute inset-0 z-20 bg-blue-800 w-2/6 h-full origin-left transition transform duration-500 hover:scale-x-[1.25]"></div>
-                            <div className="absolute z-[25] inset-0  p-4 bg-blue-900 rounded w-1/6 h-full origin-left transform transition duration-500 hover:scale-x-[1.2] overflow-hidden"></div>
-                            <div className='absolute z-[30] inset-0 flex items-center justify-center p-4 pointer-events-none w-3/6'>
+                            <div className="absolute inset-0 z-10 bg-blue-900 w-full h-full origin-left transition transform duration-500 hover:scale-x-[1.05]"></div>
+                            <div className="absolute inset-0 z-[15] bg-blue-800 w-4/5 h-full origin-left transition transform duration-500 hover:scale-x-[1.2]"></div>
+                            <div className="absolute inset-0 z-20 bg-blue-700 w-3/5 h-full origin-left transition transform duration-500 hover:scale-x-[1.25]"></div>
+                            <div className="absolute z-[25] inset-0  p-4 bg-blue-600 rounded w-2/5 h-full origin-left transform transition duration-500 hover:scale-x-[1.2] overflow-hidden"></div>
+                            <div className='absolute z-[30] inset-0 flex items-center justify-center p-4 pointer-events-none w-2/5'>
                                 <p className='text-white'>Explore Various options to Collaborating with teammates</p>
 
                             </div>
