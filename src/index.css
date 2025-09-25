@@ -98,6 +98,12 @@ button:hover {
   display: none !important;
 }
 
-.rotated{
-  transform: rotate(45deg);
+a {
+  color: #222;
+ 
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: #3b82f6;
 }

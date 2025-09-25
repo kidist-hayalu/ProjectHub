@@ -93,8 +93,8 @@ function Homepage() {
                             <CopyrightIcon size={16} /> 2025 ProjectHub, Inc.
                         </div>
                     </div>
-                    <div className="footer-links">
-                        <div>
+                    <div className="flex flex-row flex-wrap" style={{ flex: '3 1 600px'}}>
+                        <div className='flex flex-col items-start justify-start'>
                             <div className="font-bold mb-2" style={{ color: '#222' }}>Company</div>
                             <a href="#">About us</a>
                             <a href="#">Careers</a>
@@ -103,7 +103,7 @@ function Homepage() {
                             <a href="#">Terms & privacy</a>
                             <a href="#">Your privacy rights</a>
                         </div>
-                        <div>
+                        <div className='flex fllex-col items-start '>
                             <div className="font-bold mb-2" style={{ color: '#222' }}>Resources</div>
                             <a href="#">Help center</a>
                             <a href="#">Pricing</a>
@@ -112,7 +112,7 @@ function Homepage() {
                             <a href="#">Integrations</a>
                             <a href="#">Affiliates</a>
                         </div>
-                        <div>
+                        <div className='flex flex-col items-start justify-end'>
                             <div className="font-bold mb-2" style={{ color: '#222' }}>For</div>
                             <a href="#">Enterprise</a>
                             <a href="#">Small business</a>
