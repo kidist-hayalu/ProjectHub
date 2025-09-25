@@ -65,9 +65,9 @@ function Homepage() {
             </div>
             <footer className="border-t-2 bg-white pb-6 pt-6">
                 <div className="flex flex-wrap gap-8 justify-space-between">
-                    <div className="min-w-60 flex flex-col gap-5" style={{ flex: '1 1 260px' }}>
+                    <div className="min-w-60 flex flex-col ml-36 gap-5" style={{ flex: '1 1 300px' }}>
                         
-                        <div className="flex gap-4 mb-4">
+                        <div className="flex gap-4 mb-2 mt-12">
                             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className='text-cyan-950 size-6 transition-colors duration-200 hover:text-blue-400'>
                                 <Instagram size={24} />
                             </a>
@@ -85,16 +85,16 @@ function Homepage() {
                             </a>
                         </div>
 
-                        <div className="size-6 transition-colors duration-200">
-                            <p>We do not sell or share your personal information</p>
-                            <a href="#">Cookie settings</a>
+                        <div className='text-gray-700'>
+                            <p className='mb-2'>We do not sell or share your personal information</p>
+                            <a href="#" className="size-6 transition-colors duration-200" >Cookie settings</a>
                         </div>
-                        <div className="flex flex-row items-center justify-center">
-                            <CopyrightIcon size={16} /> 2025 ProjectHub, Inc.
+                        <div className="flex flex-row items-start justify-start mt-4">
+                            <p className='flex flex-row items-center' style={{ color: '#888'}}><CopyrightIcon size={16} /> 2025 ProjectHub, Inc.</p>
                         </div>
                     </div>
-                    <div className="flex flex-row flex-wrap" style={{ flex: '3 1 600px'}}>
-                        <div className='flex flex-col items-start justify-start'>
+                    <div className="flex flex-row flex-wrap mb-10 ml-56" style={{ flex: '3 1 600px'}}>
+                        <div className='flex flex-col items-start justify-start mx-10'>
                             <div className="font-bold mb-2" style={{ color: '#222' }}>Company</div>
                             <a href="#">About us</a>
                             <a href="#">Careers</a>
@@ -103,7 +103,7 @@ function Homepage() {
                             <a href="#">Terms & privacy</a>
                             <a href="#">Your privacy rights</a>
                         </div>
-                        <div className='flex fllex-col items-start '>
+                        <div className='flex flex-col items-start justify-start mx-10'>
                             <div className="font-bold mb-2" style={{ color: '#222' }}>Resources</div>
                             <a href="#">Help center</a>
                             <a href="#">Pricing</a>
@@ -112,7 +112,7 @@ function Homepage() {
                             <a href="#">Integrations</a>
                             <a href="#">Affiliates</a>
                         </div>
-                        <div className='flex flex-col items-start justify-end'>
+                        <div className='flex flex-col items-start justify-start mx-12'>
                             <div className="font-bold mb-2" style={{ color: '#222' }}>For</div>
                             <a href="#">Enterprise</a>
                             <a href="#">Small business</a>

@@ -100,7 +100,7 @@ button:hover {
 
 a {
   color: #222;
- 
+  padding-bottom: 0.5rem;
   transition: color 0.2s;
 }
 
