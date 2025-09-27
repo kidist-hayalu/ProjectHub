@@ -47,11 +47,11 @@ function Login() {
                                     <button className="mb-2" onClick={(e) => { e.preventDefault(); /*wrongPassword(email, password);*/ }}>Login</button>
                                 </Link>
 
-                                {/*notPassword && 
+                                {notPassword && 
                                 (<> 
                                     <p className="text-red-500">Incorrect email or password</p>
                                     <Link to="/ForgotPassword" className="mb-2">Forgot Password?</Link> 
-                                </>)*/}
+                                </>)}
 
                                 <Link to="/SignIn" className="mb-2">Sign In</Link>
 

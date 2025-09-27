@@ -14,11 +14,11 @@ function Project() {
 
   return (
     <>
-      <header className='sticky'>
+      
         <Lists />
-      </header>
+      
       <div className='container'>
-        <div className='top-container mx-12'>
+        <div className='top-container mx-12 mt-16'>
           
           <SearchBox className='flex items-center justify-self-center ml-40' />
           <button onClick={() => setIsOpen(!isOpen)}>New Project</button>
@@ -37,6 +37,7 @@ function Project() {
         <div className='min-container'>
           <div className='ToDo mr-3 mt-3 ml-4'>
             <Progress className='w-full' />
+            TeamMembers, todolist, report
           </div>
           <div className='Cards mt-3 mr-3'>
             <h3 className='all-projects font-semibold text-3xl mt-3 ml-4'>All Projects</h3>

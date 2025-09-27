@@ -1,4 +1,4 @@
-import { BarChart3Icon } from "lucide-react";
+import { BarChart3Icon, Settings, User } from "lucide-react";
 
 function Lists() {
 
@@ -10,7 +10,8 @@ function Lists() {
         { id: 5, name: 'Settings' }];
 
     const navBarItems = navBar.map((bar) => <li key={bar.id} className="navBarItems hover:scale-90">{bar.name}</li>);
-    return (
+    return (<>
+    <header className='fixed top-0 left-0 w-full z-50 bg-white shadow-md bg-transparent'>
         <div className="sticky top-0">
             <nav className="nav py-2">
                 <div className="mr-96 flex justify-normal">
@@ -20,11 +21,20 @@ function Lists() {
                     <div className="flex-1 text-2xl font-bold ">
                         <h2 >ProjectHub</h2>
                     </div>
-                    
+
                 </div>
-                <ul className="list-none flex justify-center items-center gap-8 mr-96">{navBarItems}</ul>
+                <ul className="list-none flex justify-center items-center gap-8 mr-80">{navBarItems}</ul>
+
+                <div className="flex flex-row items-center">
+                    <div className="bg-cyan-500 rounded-full p-1 hover:scale-110 hover:cursor-pointer">
+                        <User size={18} />
+                    </div>
+                
+                <p className="ml-1 text-base hover:cursor-pointer hover:scale-90">Sign In</p>
+                </div>
             </nav>
-        </div>
+        </div></header>
+        </>
     )
 }
 

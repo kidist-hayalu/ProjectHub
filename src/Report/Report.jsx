@@ -33,13 +33,17 @@ function Report() {
     function handleSort() {
         setIsAsc(!isAsc);
     }
+
+    function fetchData(){
+        const dat = Data.map((data) => data.ProjectTitle);
+    }
     return (
-        <div>
-            <header className='sticky'>
+        <>
+            
                 <Lists />
-            </header>
+            
             <div className='container'>
-                <div className='top-container mx-12 my-2'>
+                <div className='top-container mx-12 mt-16'>
                     <SearchBox className='flex items-center justify-self-center ml-40' />
 
                     <button onClick={() => setIsOpen(!isOpen)}>New Project</button>
@@ -56,8 +60,9 @@ function Report() {
                 </div>
 
 
-                <div className='flex flex-col justify-center items-center mx-6'>
-                    <div className="flex items-center justify-self-center mb-3 border rounded w-1/4">
+                <div className='flex flex-col mx-6'>
+                    <h2 className="text-2xl font-bold mx-14 mt-10 mb-6">{Data[0].ProjectTitle} Report</h2>
+                    <div className="flex items-center justify-self-center mb-4 mx-14 border rounded w-1/4">
                         <input
                             type="text"
                             placeholder="Search by name or activity"
@@ -96,7 +101,7 @@ function Report() {
                     }}/>
                 </div>
             </div>
-        </div>
+        </>
     );
 }
 
