@@ -2,7 +2,7 @@ import Lists from '../Components/Lists.jsx';
 import { Link } from 'react-router-dom';
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css'
+import Carousel from './Carousel.jsx';
 import { motion } from 'framer-motion';
 import Stacks from './stacks.jsx';
 import { Instagram, Linkedin, Facebook, Youtube, Twitter, CopyrightIcon } from 'lucide-react';
@@ -11,9 +11,9 @@ import { Instagram, Linkedin, Facebook, Youtube, Twitter, CopyrightIcon } from '
 function Homepage() {
     return (
         <>
-            
-                <Lists />
-           
+
+            <Lists className='bg-slate-50' />
+
             <div className='container'>
                 <div className='py-64 flex flex-col items-center justify-center bg-gradient-to-br from-cyan-700 via-cyan-800 to-cyan-900 shadow-lg rounded-b-lg'>
                     <h1 className='text-4xl font-bold text-center text-white mt-20'>Welcome to ProjectHub</h1>
@@ -23,8 +23,13 @@ function Homepage() {
                     </div>
                 </div>
 
-                <div className='h-full flex items-center justify-center my-8'>
-                        <p className='font-semibold text-xl'>Explore and navigate with your team</p>    
+                <div className='h-full flex flex-col items-center justify-center my-8'>
+                    <p className='font-semibold text-xl'>Explore and navigate with your team</p>
+                    <div className='relative overflow-hidden w-full h-full py-44'>
+                        <Carousel />
+                        
+
+                    </div>
                 </div>
                 <div className='flex flex-row pr-20  my-44'>
                     <div className='p-0 h-full flex flex-col items-center justify-center text-black  rounded-md mr-52 w-4/6'>
@@ -64,10 +69,10 @@ function Homepage() {
 
                 </div>
             </div>
-            <footer className="border-t-2 bg-white pb-6 pt-6">
+            <footer className="border-t-2 bg-slate-50 pb-6 pt-6">
                 <div className="flex flex-wrap gap-8 justify-space-between">
                     <div className="min-w-60 flex flex-col ml-36 gap-5" style={{ flex: '1 1 300px' }}>
-                        
+
                         <div className="flex gap-4 mb-2 mt-12">
                             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className='text-cyan-950 size-6 transition-colors duration-200 hover:text-blue-400'>
                                 <Instagram size={24} />
@@ -91,10 +96,10 @@ function Homepage() {
                             <a href="#" className="size-6 transition-colors duration-200" >Cookie settings</a>
                         </div>
                         <div className="flex flex-row items-start justify-start mt-4">
-                            <p className='flex flex-row items-center' style={{ color: '#888'}}><CopyrightIcon size={16} /> 2025 ProjectHub, Inc.</p>
+                            <p className='flex flex-row items-center' style={{ color: '#888' }}><CopyrightIcon size={16} /> 2025 ProjectHub, Inc.</p>
                         </div>
                     </div>
-                    <div className="flex flex-row flex-wrap mb-10 ml-56" style={{ flex: '3 1 600px'}}>
+                    <div className="flex flex-row flex-wrap mb-10 ml-56" style={{ flex: '3 1 600px' }}>
                         <div className='flex flex-col items-start justify-start mx-10'>
                             <div className="font-bold mb-2" style={{ color: '#222' }}>Company</div>
                             <a href="#">About us</a>
