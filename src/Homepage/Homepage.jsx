@@ -25,7 +25,7 @@ function Homepage() {
 
                 <div className='h-full flex flex-col items-center justify-center my-8'>
                     <p className='font-semibold text-xl'>Explore and navigate with your team</p>
-                    <div className='relative overflow-hidden w-full h-full py-44'>
+                    <div className='relative overflow-hidden w-full h-full py-10'>
                         <Carousel />
                         
 
