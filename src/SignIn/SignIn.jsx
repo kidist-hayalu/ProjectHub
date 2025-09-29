@@ -41,18 +41,18 @@ function SignIn() {
 
     return (
         <div className="h-screen w-full bg-gradient-to-br from-cyan-700 via-cyan-800 to-cyan-900 flex justify-center items-center">
-            <div className="flex flex-col items-center py-12 w-1/5 bg-gradient-to-bl from-slate-200 via-slate-300 to-slate-400 rounded-md">
+            <div className="flex flex-col items-center py-12 w-1/4 bg-gradient-to-bl from-slate-200 via-slate-300 to-slate-400 rounded-md">
                 <div className="mb-2">
                     <div className="flex items-center justify-center bg-gradient-to-tr from-blue-500 via-blue-500 to-blue-600 p-0 mb-2 ml-4 w-1/2 rounded">
                         <BarChart3Icon style={{color: "white", width: `1.65rem`, height: `1.65rem`}} />
                     </div>
-                    <span className="mb-10 pb-10 font-bold">ProjectHub</span>
+                    <span className="mb-14 pb-10 font-bold">ProjectHub</span>
                 </div>
-                <input type="text" value={email} onChange={changeEmail} placeholder="Enter your Email" className="my-2 border-solid border-black w-5/6 px-2 rounded" />
-                <input type="password" value={password} onChange={changePassword} placeholder="Enter Password" className="my-2 border-solid border-black w-5/6 px-2 rounded" />
-                <input type="password" value={confirm} onChange={changeConfirm} placeholder="Confirm Password" className="my-2 border-solid border-black w-5/6 px-2 rounded" />
+                <input type="text" value={email} onChange={changeEmail} placeholder="Enter your Email" className="my-4 border-solid border-black w-5/6 px-2 rounded" />
+                <input type="password" value={password} onChange={changePassword} placeholder="Enter Password" className="my-4 border-solid border-black w-5/6 px-2 rounded" />
+                <input type="password" value={confirm} onChange={changeConfirm} placeholder="Confirm Password" className="my-4 border-solid border-black w-5/6 px-2 rounded" />
                 <Link to={"/Dashboard"}>
-                    <button onClick={handleClick} className="my-2">Sign In</button>
+                    <button onClick={handleClick} className="my-4">Sign In</button>
                 </Link>
             </div>
         </div>

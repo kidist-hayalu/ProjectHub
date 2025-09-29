@@ -3,19 +3,24 @@ import { Link } from 'react-router-dom';
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Carousel from './Carousel.jsx';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import Stacks from './stacks.jsx';
 import { Instagram, Linkedin, Facebook, Youtube, Twitter, CopyrightIcon } from 'lucide-react';
 
 
 function Homepage() {
+
+    const { scrollY } = useScroll();
+    const y = useTransform(scrollY, [0, 500], [0, -20]);
+    const opacity = useTransform(scrollY, [0, 300], [0, 1]);
+
     return (
         <>
 
             <Lists className='bg-slate-50' />
 
             <div className='container'>
-                <div className='py-64 flex flex-col items-center justify-center bg-gradient-to-br from-cyan-700 via-cyan-800 to-cyan-900 shadow-lg rounded-b-lg'>
+                <div className='py-60 flex flex-col items-center justify-center bg-gradient-to-br from-cyan-700 via-cyan-800 to-cyan-900 shadow-lg rounded-b-lg'>
                     <h1 className='text-4xl font-bold text-center text-white mt-20'>Welcome to ProjectHub</h1>
                     <p className='text-white p-3 font-semibold text-center'>Where your projects come to life and your team becomes one </p>
                     <div className='p-2 rounded-3xl bg-cyan-700  backdrop-blur-lg backdrop-opacity-25  hover:bg-cyan-800 transition duration-200 hover:scale-105'>
@@ -23,14 +28,16 @@ function Homepage() {
                     </div>
                 </div>
 
-                <div className='h-full flex flex-col items-center justify-center my-8'>
+                <motion.div className='h-full flex flex-col items-center justify-center my-8'
+                style={{ y, opacity }}
+                >
                     <p className='font-semibold text-xl'>Explore and navigate with your team</p>
-                    <div className='relative overflow-hidden w-full h-full py-10'>
+                    <div className='relative overflow-hidden w-full h-full py-6'>
                         <Carousel />
                         
 
                     </div>
-                </div>
+                </motion.div>
                 <div className='flex flex-row pr-20  my-44'>
                     <div className='p-0 h-full flex flex-col items-center justify-center text-black  rounded-md mr-52 w-4/6'>
                         <Stacks />
