@@ -1,4 +1,4 @@
-import Lists from '../Components/Lists.jsx';
+import HomepageNav from '../Components/HomepageNav.jsx';
 import { Link } from 'react-router-dom';
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -17,7 +17,7 @@ function Homepage() {
     return (
         <>
 
-            <Lists className='bg-slate-50' />
+            <HomepageNav className='bg-slate-50' />
 
             <div className='container'>
                 <div className='py-60 flex flex-col items-center justify-center bg-gradient-to-br from-cyan-700 via-cyan-800 to-cyan-900 shadow-lg rounded-b-lg'>
