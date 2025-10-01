@@ -1,4 +1,4 @@
-import HomepageNav from '../Components/HomepageNav.jsx';
+import HomepageNav from './HomepageNav.jsx';
 import { Link } from 'react-router-dom';
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
