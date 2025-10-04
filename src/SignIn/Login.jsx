@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 function Login() {
 
+    const [isOpen, setIsOpen] = useState(false);
+
     const [user, setUser] = useState([]);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -31,9 +33,9 @@ function Login() {
     return (
         <div className="h-screen w-full bg-gradient-to-br from-cyan-700 via-cyan-800 to-cyan-900 flex justify-center items-center">
             <div className="flex flex-row items-center justify-center bg-gradient-to-bl from-slate-200 via-slate-300 to-slate-400 w-3/5 h-4/5 rounded-md shadow-lg">
-                <div className="w-1/2 flex items-center justify-center bg-blue-300 h-full p-6">
+                <div className="w-1/2 flex items-center justify-center bg-cyan-500 h-full p-6">
                     <div className="w-full h-full flex items-center justify-center  shadow-xl rounded-lg bg-white/25">
-                        <p className="px-12 ">Login to continue from where you've stopped or create an account to explore</p>
+                        <p className="text-center text-white">Login to continue from where you've stopped <br />or create an account to explore</p>
                     </div>
                 </div>
                 <div className="w-1/2 h-full flex flex-col items-center justify-center py-14 pl-14  rounded-md">
@@ -49,7 +51,7 @@ function Login() {
                                     <button className="mb-2" onClick={(e) => { e.preventDefault(); /*wrongPassword(email, password);*/ }}>Login</button>
                                 </Link>
 
-                                {notPassword && 
+                                {!notPassword && 
                                 (<> 
                                     <p className="text-red-500">Incorrect email or password</p>
                                     <Link to="/ForgotPassword" className="mb-2">Forgot Password?</Link> 

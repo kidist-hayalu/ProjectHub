@@ -1,4 +1,5 @@
 import { BarChart3Icon, Settings, User } from "lucide-react";
+import { Link } from "lucide-react";
 
 function HomepageNav() {
 

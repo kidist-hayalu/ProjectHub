@@ -20,14 +20,15 @@ function Homepage() {
             <HomepageNav className='bg-slate-50' />
 
             <div className='container'>
-                <div className='py-60 flex flex-col items-center justify-center bg-gradient-to-br from-cyan-700 via-cyan-800 to-cyan-900 shadow-lg rounded-b-lg'>
-                    <h1 className='text-4xl font-bold text-center text-white mt-20'>Welcome to ProjectHub</h1>
+                <div className='py-60 flex flex-col items-center justify-center bg-gradient-to-br from-cyan-700 via-cyan-800 to-cyan-900 shadow-xl rounded-b-2xl'>
+                    <h1 className='text-7xl font-bold text-center text-white mt-10'>Welcome to ProjectHub</h1>
                     <p className='text-white p-3 font-semibold text-center'>Where your projects come to life and your team becomes one </p>
                     <div className='p-2 rounded-3xl bg-cyan-700  backdrop-blur-lg backdrop-opacity-25  hover:bg-cyan-800 transition duration-200 hover:scale-105'>
                         <Link to={'/Login'} className='text-white '>Start project</Link>
                     </div>
                 </div>
 
+                {/*
                 <motion.div className='h-full flex flex-col items-center justify-center my-8'
                 style={{ y, opacity }}
                 >
@@ -37,7 +38,7 @@ function Homepage() {
                         
 
                     </div>
-                </motion.div>
+                </motion.div>*/}
                 <div className='flex flex-row pr-20  my-44'>
                     <div className='p-0 h-full flex flex-col items-center justify-center text-black  rounded-md mr-52 w-4/6'>
                         <Stacks />
@@ -70,9 +71,6 @@ function Homepage() {
                         </div>
 
                     </div>
-
-                </div>
-                <div className='p-10 flex flex-col items-center justify-center w-3/4'>
 
                 </div>
             </div>
