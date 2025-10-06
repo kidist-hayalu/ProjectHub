@@ -1,4 +1,5 @@
 import HomepageNav from './HomepageNav.jsx';
+import Chart from '../Report/Chart.jsx'
 import { Link } from 'react-router-dom';
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -59,7 +60,10 @@ function Homepage() {
                 <div className='flex flex-row h-screen px-10'>
                     <div className='p-10 ml-10 flex flex-col items-center justify-center w-full'>
                         <div className="relative flex items-center justify-center w-full h-full">
-                            <div className="absolute inset-0 z-10 bg-cyan-900 w-full h-full origin-left transition transform duration-500 hover:scale-x-[1.05]"></div>
+                            <div className="absolute inset-0 z-10 bg-cyan-900 w-full h-full origin-left transition transform duration-500 hover:scale-x-[1.05]">
+                                {/*<p>Explore Progress Charting</p>
+                                <Chart />*/}
+                            </div>
                             <div className="absolute inset-0 z-[15] bg-cyan-800 w-4/5 h-full origin-left transition transform duration-500 hover:scale-x-[1.2]"></div>
                             <div className="absolute inset-0 z-20 bg-cyan-700 w-3/5 h-full origin-left transition transform duration-500 hover:scale-x-[1.25]"></div>
                             <div className="absolute z-[25] inset-0  p-4 bg-cyan-600 rounded w-2/5 h-full origin-left transform transition duration-500 hover:scale-x-[1.2] overflow-hidden"></div>
