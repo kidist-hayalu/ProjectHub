@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Lists from "../Components/Lists";
 import SearchBox from "../Components/SearchBox";
 import NewProject from "../Project/NewProject";
@@ -19,6 +19,12 @@ function Report() {
     const [isAsc, setIsAsc] = useState(true);
 
 
+    useEffect(() => {
+
+        
+
+    },[dat])
+
     const initialMembers = [
         { id: 1, name: 'Alice', activity: 'Design', progress: 75, tasks: 5 },
         { id: 2, name: 'Richard', activity: 'Development', progress: 60, tasks: 2 },
@@ -34,9 +40,7 @@ function Report() {
         setIsAsc(!isAsc);
     }
 
-    function fetchData(){
-        const dat = Data.map((data) => data.ProjectTitle);
-    }
+    const dat = Data.map((data) => data.ProjectTitle);
     return (
         <>
             

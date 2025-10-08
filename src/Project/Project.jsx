@@ -10,6 +10,7 @@ import Progress from '../Components/Progress.jsx';
 
 
 function Project() {
+
   const [isOpen, setIsOpen] = useState(false);
 
   return (

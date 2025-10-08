@@ -11,6 +11,7 @@ import Report from './Report/Report.jsx'
 import Chart from "./Report/Chart.jsx"
 import Login from './SignIn/Login.jsx'
 import Homepage from './Homepage/Homepage.jsx'
+import Sign from './SignIn/Sign.jsx'
 
 const router = createBrowserRouter([
   {path: "/", element: <Homepage />},
