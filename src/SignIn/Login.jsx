@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import SignIn from './SignIn.jsx';
-import Sign from "./Sign.jsx";
 import { motion } from "framer-motion";
 import { BarChart3Icon } from "lucide-react";
 function Login() {
@@ -91,7 +90,6 @@ function Login() {
                                         <Link to="/ForgotPassword" className="mb-2">Forgot Password?</Link>
                                     </>)}
 
-                                <div onClick={() => { setIsOpen(!isOpen) }} className="cursor-pointer hover:scale-105">Sign In</div>
 
 
                             </div>

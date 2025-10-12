@@ -33,12 +33,12 @@ header{
   border-radius: 8px;
   margin: 0.65rem 0.75rem;
   background-color: #fff;
-  box-shadow: 3px 2px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 3px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .card-container h1 {
   font-size: 1.5em;
-  margin: 0 0 8px;
+  margin: 0 0 4px;
 }
 
 .card-container p {
@@ -51,7 +51,6 @@ header{
 }
 
 .Cards {
-  width: 40%;
   box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.3);
 }
 
@@ -59,8 +58,8 @@ header{
   text-align: center;
   justify-items: center;
   align-items: center;
-  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.3);
-  width: 60%;
+  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.1);
+  
 }
 
 .task-list{
@@ -84,17 +83,14 @@ header{
 }
 
 button{
-  border: none;
-  border-radius: 10%;
+  border: black solid 1px;
+  border-radius: 5%;
   padding: 0.2rem 0.35rem;
-  background-color: rgb(106, 129, 234);
-  color: #fff;
+  color: black;
   cursor: pointer;
 }
 
-button:hover {
-  background-color: rgb(82, 110, 202);
-}
+
 
 .p-sortable-column-icon{
   display: none !important;

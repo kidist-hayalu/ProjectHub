@@ -1,13 +1,11 @@
 import Card from '../Components/Card.jsx';
 import Lists from '../Components/Lists.jsx';
-import Button from '../Components/Button.jsx';
 import SearchBox from '../Components/SearchBox.jsx';
-import ToDo from '../Components/ToDo.jsx';
 import NewProject from './NewProject.jsx';
 import React, { useState } from 'react';
 import { X } from 'lucide-react';
 import Progress from '../Components/Progress.jsx';
-
+import Data from '../assets/Data.json';
 
 function Project() {
 
@@ -15,12 +13,11 @@ function Project() {
 
   return (
     <>
-      
-        <Lists />
-      
-      <div className='container'>
+      <Lists />
+
+      <div className='container px-16'>
         <div className='top-container mx-12 mt-16'>
-          
+
           <SearchBox className='flex items-center justify-self-center ml-40' />
           <button onClick={() => setIsOpen(!isOpen)}>New Project</button>
 
@@ -35,21 +32,55 @@ function Project() {
             </div>)}
 
         </div>
-        <div className='min-container'>
-          <div className='ToDo mr-3 mt-3 ml-4'>
-            <Progress className='w-full' />
-            TeamMembers, todolist, report
+        <div className='flex flex-row'>
+          <div className='w-1/4 mx-6 py-12 rounded-sm shadow-md flex flex-row'>
+            <img src='/assets/list-check-solid-full.svg' alt="Link List Icon" className='w-14 h-14 mx-2' />
+            <div className='flex flex-col'>
+              <p className='text-3xl font-bold'>{Data.length}</p>
+              <h3 className='font-sans font-semibold'>Active Projects</h3>
+            </div>
+
           </div>
-          <div className='Cards mt-3 mr-3'>
-            <h3 className='all-projects font-semibold text-3xl mt-3 ml-4'>All Projects</h3>
-            <Card title="Most active" progress={60} />
-            <Card title="Most progress" progress={80} />
-            <Card title="Second active" progress={40} />
-            <Card title="third active" progress={20} />
-            <Card title="fourth active" progress={10} />
+          <div className='w-1/4 mx-6 py-12 rounded-sm shadow-md flex flex-row'>
+            <img src='/assets/users-line-solid-full.svg' alt="Link List Icon" className='w-14 h-14 mx-2' />
+            <div className='flex flex-col'>
+              <p className='text-3xl font-bold'>{Data.length}</p>
+              <h3 className='font-sans font-semibold'>Total Teams</h3>
+            </div>
+
           </div>
+          <div className='w-1/4 mx-6 py-12 rounded-sm shadow-md flex flex-row'>
+            <img src='/assets/list-check-solid-full.svg' alt="Link List Icon" className='w-14 h-14 mx-2' />
+            <div className='flex flex-col'>
+              <p className='text-3xl font-bold'>{Data.length}</p>
+              <h3 className='font-sans font-semibold'>Completed Projects</h3>
+            </div>
+            </div>
+            <div className='w-1/4 mx-6 py-12 rounded-sm shadow-md flex flex-row'>
+              <img src='/assets/list-check-solid-full.svg' alt="Link List Icon" className='w-14 h-14 mx-2' />
+              <div className='flex flex-col'>
+                <p className='text-3xl font-bold'>{Data.length}</p>
+                <h3 className='font-sans font-semibold'>Overall Progress</h3>
+              </div>
+
+            </div>
           
-        </div>
+          </div>
+          <div className='min-container '>
+
+
+
+            <div className='Cards rounded-lg mt-3 ml-6 w-3/5 px-4'>
+              <h3 className='all-projects font-semibold font-heading text-3xl mt-3 ml-4'>Current Projects</h3>
+              <Card title="Most active" progress={60} />
+              <Card title="Most progress" progress={80} />
+              <Card title="Second active" progress={40} />
+            </div>
+            <div className='ToDo mr-3 p-4 mt-3 ml-4 w-2/5 rounded-lg'>
+              <Progress className='w-full ' />
+            </div>
+          </div>
+        
       </div>
     </>
   )

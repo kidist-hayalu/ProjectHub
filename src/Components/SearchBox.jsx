@@ -14,6 +14,8 @@ function SearchBox(){
         setQuery("");
     }
 
+    const dat = Data.map(data => data.ProjectTitle)
+
     function clearButton(){
         if(!query)
             return null;

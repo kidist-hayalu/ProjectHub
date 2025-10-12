@@ -19,11 +19,6 @@ function Report() {
     const [isAsc, setIsAsc] = useState(true);
 
 
-    useEffect(() => {
-
-        
-
-    },[dat])
 
     const initialMembers = [
         { id: 1, name: 'Alice', activity: 'Design', progress: 75, tasks: 5 },
@@ -46,7 +41,7 @@ function Report() {
             
                 <Lists />
             
-            <div className='container'>
+            <div className='container px-6'>
                 <div className='top-container mx-12 mt-16'>
                     <SearchBox className='flex items-center justify-self-center ml-40' />
 
@@ -86,7 +81,7 @@ function Report() {
                     </div>
                 </div>
 
-                <div>
+                <div className="chart-container w-3/5 mt-10 mx-14 mb-10">
                     <Bar data={{
                         labels: Data.map((data) => data.ProjectTitle),
                         datasets: [
@@ -94,9 +89,9 @@ function Report() {
                                 label: "Individual Progress",
                                 data: Data.map((data) => data.TeamMembers.map(member => member.progress)).flat(),
                                 backgroundColor: [
-                                    "rgba(43,64,229,0.8)",
-                                    "rgba(192,250,19,0.8)",
-                                    "rgba(112,194,20,0.8)"
+                                "rgba(6, 182, 212, 1)",
+                                "rgba(8,145,178,1)",
+                                "rgba(14, 116, 144, 1)"
                                 ],
                                 borderRadius: 5,
 

@@ -35,9 +35,10 @@ function Chart() {
                             label: "Project Progress",
                             data: Data.map((data) => data.TeamMembers.map(member => member.progress)).flat(),
                             backgroundColor: [
-                                "rgba(43,64,229,0.8)",
-                                "rgba(192,250,19,0.8)",
-                                "rgba(112,194,20,0.8)"
+                                "rgba(6, 182, 212, 1)",
+                                "rgba(8,145,178,1)",
+                                "rgba(14, 116, 144, 1)"
+                                
                             ],
                             borderRadius: 5,
 
@@ -52,9 +53,9 @@ function Chart() {
                             label: "progress",
                             data: tracker1 ? tracker1.TeamMembers.map(member => member.progress) : [],
                             backgroundColor: [
-                                "rgba(43,64,229,0.8)",
-                                "rgba(192,250,19,0.8)",
-                                "rgba(112,194,20,0.8)"
+                                "rgba(6, 182, 212, 1)",
+                                "rgba(8,145,178,1)",
+                                "rgba(14, 116, 144, 1)"
                             ],
                             borderRadius: 5,
                         }
