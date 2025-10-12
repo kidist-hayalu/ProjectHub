@@ -3,7 +3,7 @@ import Lists from "../Components/Lists";
 import SearchBox from "../Components/SearchBox";
 import NewProject from "../Project/NewProject";
 import Data from "../assets/Data.json";
-import { X, Filter } from 'lucide-react';
+import { X, Filter, LineChart } from 'lucide-react';
 import { DataTable } from 'primereact/datatable';
 import { Column } from "primereact/column";
 import 'primereact/resources/themes/lara-light-indigo/theme.css';
@@ -70,6 +70,7 @@ function Report() {
                             className='ml-30 w-full border-none pl-2' />
                         <Filter className='w-5 h-5 text-gray-500 relative pr-1'/>
                     </div>
+                    <div className="flex flex-row">
                     <div className="border rounded-sm mx-6 w-full">
                     <DataTable value={filteredMembers} className="w-full">
                         <Column field="id" header="ID" sortable  />
@@ -78,6 +79,21 @@ function Report() {
                         <Column field="progress" header="Progress" sortable  />
                         <Column field="tasks" header="Tasks" sortable  />
                     </DataTable>
+                    </div>
+                    <div className="w-3/5" >
+                        <Line data={{
+                            labels: dat,
+                            datasets: [
+                                {
+                                    label: 'Overall Progress',
+                                    data: Data.map((data) => data.TeamMembers.map(member => member.progress)).flat(),
+                                    fill: false,
+                                    borderColor: 'rgba(6, 182, 212, 1)',
+                                    tension: 0.1
+                                }
+                            ]
+                        }}/>
+                    </div>
                     </div>
                 </div>
 

@@ -34,7 +34,7 @@ function Project() {
         </div>
         <div className='flex flex-row'>
           <div className='w-1/4 mx-6 py-12 rounded-sm shadow-md flex flex-row'>
-            <img src='/assets/list-check-solid-full.svg' alt="Link List Icon" className='w-14 h-14 mx-2' />
+            <img src='/assets/hourglass-half-solid-full.svg' alt="Link List Icon" className='w-14 h-14 mx-2' />
             <div className='flex flex-col'>
               <p className='text-3xl font-bold'>{Data.length}</p>
               <h3 className='font-sans font-semibold'>Active Projects</h3>
@@ -57,7 +57,7 @@ function Project() {
             </div>
             </div>
             <div className='w-1/4 mx-6 py-12 rounded-sm shadow-md flex flex-row'>
-              <img src='/assets/list-check-solid-full.svg' alt="Link List Icon" className='w-14 h-14 mx-2' />
+              <img src='/assets/chart-line-solid-full.svg' alt="Link List Icon" className='w-14 h-14 mx-2' />
               <div className='flex flex-col'>
                 <p className='text-3xl font-bold'>{Data.length}</p>
                 <h3 className='font-sans font-semibold'>Overall Progress</h3>
