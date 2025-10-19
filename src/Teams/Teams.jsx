@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Lists from '../Components/Lists'
 import SearchBox from '../Components/SearchBox';
 import Data from '../assets/Data.json'
@@ -6,11 +6,16 @@ import Card from '../Components/Card.jsx'
 
 function Teams() {
 
-
-
-
+    const [isOpen, setIsOpen] = useState(null);
     const data = Data.map((dat) => dat.TeamMembers);
     const memberProgress = data.map((mp) => mp.progress);
+    
+    useEffect(() => {
+
+        <div>{Data.ProjectTitle}</div>
+        
+    }
+        ,[isOpen])
 
     return (
         <>
@@ -26,8 +31,15 @@ function Teams() {
                     </div>
                     <div className='mx-12 w-full flex items-start justify-start'>
                         <div className='w-full'>
-                            {data.map((member, index) => (
-                                <Card key={index} name={member.name} progress={member.progress} />
+                            {Data.map((title, index) => (<div className='border flex flex-row' key={index}>
+                                <li className='w-1/2'>{title.ProjectTitle}</li>
+                                <button className='flex items-center justify-self-center' onClick={() => {setIsOpen(isOpen === index ? null : index);}}>show members</button>
+                                {isOpen === index &&
+                                <div className='flex items-start justify-start flex-col'>
+                                   <ul>{title.TeamMembers.map((n, nIndex) => (<li className='list-none' key={nIndex}>{n.name}</li>))}</ul>
+                                    </div>
+                                }
+                            </div>
                             ))}
                         </div>
                     </div>
