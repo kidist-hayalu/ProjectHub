@@ -39,15 +39,15 @@ function ToDo() {
     }
     return (
         <div className="to-do-list">
-            <h2 className="my-4 text-xl">TO DO LIST</h2>
-            <div className="flex flex-row w-full">
+            <h2 className="mb-4 mt-20 ml-12 font-heading font-semibold text-xl">TO DO LIST</h2>
+            <div className="flex flex-row w-3/4 ml-12">
                 <input type="text" placeholder="Enter a task" className="border px-2 w-full rounded" value={newTask} onChange={handleChange} />
                 <button onClick={addTasks} className="addBtn">Add</button>
             </div>
             <ol>
                 {tasks.map((task, index) =>
-                    <div className="task-list">
-                        <li key={index} className="li">{task}
+                    <div className="task-list  w-3/4">
+                        <li key={index} className="li list-none bg-white shadow-sm ml-12">{task}
                             <button className="m-1" onClick={() => deleteTask(index)}>Delete</button>
                             <button className="m-1" onClick={() => moveTaskUp(index)} >Up</button>
                             <button className="m-1" onClick={() => moveTaskDown(index)} >Down</button>

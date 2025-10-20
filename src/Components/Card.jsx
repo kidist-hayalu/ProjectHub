@@ -55,10 +55,11 @@ function Card(props) {
                 {isOpen && (
                     <div className='fixed inset-0 bg-black/30 backdrop-blur-md flex items-center justify-center z-50'>
                         <div className='w-1/2 h-4/5 m-20 relative bg-white shadow-lg'>
-                            <ToDo className='shadow-lg w-96 p-6 rounded' />
                             <div className='mt-4 flex absolute top-1 right-6 justify-end'>
-                                <button onClick={() => setIsOpen(false)} className='p-2 rounded-full'><X /></button>
+                                <button onClick={() => setIsOpen(false)} className='p-2 rounded-full border-none'><X /></button>
                             </div>
+                            <ToDo className='shadow-lg w-96 p-6 rounded' />
+                            
                         </div>
                     </div>
                 )}
