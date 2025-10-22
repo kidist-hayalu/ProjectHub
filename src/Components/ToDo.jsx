@@ -46,8 +46,8 @@ function ToDo() {
             </div>
             <ol>
                 {tasks.map((task, index) =>
-                    <div className="task-list  w-3/4">
-                        <li key={index} className="li list-none bg-white shadow-sm ml-12">{task}
+                    <div className="task-list  w-5/6">
+                        <li key={index} className="li flex flex-row items-center justify-center list-none bg-white shadow-sm ml-12"><p className="">{task}</p>
                             <button className="m-1" onClick={() => deleteTask(index)}>Delete</button>
                             <button className="m-1" onClick={() => moveTaskUp(index)} >Up</button>
                             <button className="m-1" onClick={() => moveTaskDown(index)} >Down</button>
