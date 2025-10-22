@@ -47,10 +47,12 @@ function ToDo() {
             <ol>
                 {tasks.map((task, index) =>
                     <div className="task-list  w-5/6">
-                        <li key={index} className="li flex flex-row items-center justify-center list-none bg-white shadow-sm ml-12"><p className="">{task}</p>
-                            <button className="m-1" onClick={() => deleteTask(index)}>Delete</button>
-                            <button className="m-1" onClick={() => moveTaskUp(index)} >Up</button>
-                            <button className="m-1" onClick={() => moveTaskDown(index)} >Down</button>
+                        <li key={index} className="li flex flex-row items-center list-none bg-white shadow-sm ml-10"><div className="flex justify-self-start items-start ml-4">{task}</div>
+                            <div className="ml-56 justify-self-end items-end flex flex-row">
+                                <img src="/assets/trash-solid-full.svg" className="w-5 h-5 m-1 cursor-pointer" onClick={() => deleteTask(index)} />
+                                <img src="/assets/up-long-solid-full.svg" className="w-5 h-5 m-1 cursor-pointer" onClick={() => moveTaskUp(index)} />
+                                <img src="/assets/down-long-solid-full.svg" className="w-5 h-5 m-1 cursor-pointer" onClick={() => moveTaskDown(index)} />
+                            </div>
                         </li>
 
                     </div>)}
