@@ -78,7 +78,12 @@ function Login() {
                     <div className={`w-1/2 relative h-full flex flex-col items-center justify-center py-14  z-20  ${isOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}  rounded-md`}>
 
                         <div className="mb-2 px-8 flex flex-col items-center justify-center">
-
+                            <div className="mb-10">
+                                <div className="flex items-center justify-center bg-gradient-to-tr from-cyan-500 via-cyan-500 to-cyan-600 p-0 mb-2 ml-4 w-1/2 rounded">
+                                    <BarChart3Icon style={{ color: "white", width: `1.65rem`, height: `1.65rem` }} />
+                                </div>
+                                <span className="mb-14 pb-10 font-bold">ProjectHub</span>
+                            </div>
                             <form className="pl-14">
                                 <input type="text" value={email} onChange={changeEmail} placeholder="Enter your Email" className="my-4 border-solid border-black border border-opacity w-5/6 px-2 rounded" />
                                 <input type="password" value={password} onChange={changePassword} placeholder="Enter Password" className="my-4 border-solid border-black border border-opacity w-5/6 px-2 rounded" />
@@ -107,8 +112,8 @@ function Login() {
                     </div>
                     <div className={`absolute w-1/2 h-full flex flex-col items-center justify-center top-0 left-0 py-14 transition-opacity duration-500 z-20 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}  rounded-md `}>
                         <div className="flex flex-col items-center py-12">
-                            <div className="mb-2">
-                                <div className="flex items-center justify-center bg-gradient-to-tr from-blue-500 via-blue-500 to-blue-600 p-0 mb-2 ml-4 w-1/2 rounded">
+                            <div className="mb-6">
+                                <div className="flex items-center justify-center bg-gradient-to-tr from-cyan-500 via-cyan-500 to-cyan-600 p-0 mb-2 ml-4 w-1/2 rounded">
                                     <BarChart3Icon style={{ color: "white", width: `1.65rem`, height: `1.65rem` }} />
                                 </div>
                                 <span className="mb-14 pb-10 font-bold">ProjectHub</span>
