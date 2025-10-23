@@ -1,7 +1,7 @@
 import HomepageNav from './HomepageNav.jsx';
 import Chart from '../Report/Chart.jsx'
 import { Link } from 'react-router-dom';
-import React from 'react';
+import {useState} from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Carousel from './Carousel.jsx';
 import { motion, useScroll, useTransform } from 'framer-motion';
@@ -14,6 +14,8 @@ function Homepage() {
     const { scrollY } = useScroll();
     const y = useTransform(scrollY, [0, 500], [0, -20]);
     const opacity = useTransform(scrollY, [0, 300], [0, 1]);
+
+    const [cardClick, setCardClick] = useState(false);
 
     return (
         <>
@@ -47,27 +49,45 @@ function Homepage() {
                     </div>
 
                     <section className='w-2/6'>
-                        <motion.div className='p-10 ml-6 mx-3 flex flex-col items-center justify-self-end border-2 border-cyan-500 text-black h-full rounded-md '
+
+                    <motion.div className='ml-6 mx-3 flex flex-col items-center justify-self-end border-2 border-cyan-500 text-black h-full rounded-md '
+                    initial={{ rotateZ: 0 }}
+                    whileInView={{ rotateZ: 5 }}
+                    viewport={{ amount: 0.5 }}
+                    transition={{ duration: 2, ease: "easeInOut" }}>
+                        <motion.div className='z-10 bg-white flex flex-col items-center justify-self-end border-2 border-cyan-500 text-black h-full rounded-md '
+                            initial={{ rotateZ: 0 }}
+                            whileInView={{ rotateZ: -7 }}
+                            viewport={{ amount: 0.5 }}
+                            transition={{ duration: 2, ease: "easeInOut" }}>
+                        <motion.div className='p-10 z-10 bg-white flex flex-col items-center justify-self-end border-2 border-cyan-500 text-black h-full rounded-md '
                             initial={{ rotateZ: 0 }}
                             whileInView={{ rotateZ: -10 }}
                             viewport={{ amount: 0.5 }}
                             transition={{ duration: 2, ease: "easeInOut" }}>
                             <h1 className='text-2xl font-bold text-center mb-4'>Your Journey</h1>
-                            <div>
+                            <div className='z-20'>
                                 <p className='text-start pb-1'>Move with vision every step of the way</p>
                                 <p className='text-start pb-1'>Achieve your goals with confidence</p>
                                 <p className='text-start pb-1'>Make a difference in your daily progress</p>
                             </div>
+                        </motion.div>
+                        </motion.div>
                         </motion.div>
                     </section>
                 </div>
                 <div className='flex flex-row h-screen px-10'>
                     <div className='p-10 ml-10 flex flex-col items-center justify-center w-full'>
                         <div className="relative flex items-center justify-center w-full h-full">
-                            <div className="absolute inset-0 z-10 bg-cyan-900 w-full h-full origin-left transition transform duration-500 hover:scale-x-[1.05]">
+                            <div className="absolute inset-0 z-10 bg-cyan-900 w-full h-full origin-left transition transform duration-500 hover:scale-x-[1.05]" onClick={() => setCardClick(!cardClick)}>
                                 {/*<p>Explore Progress Charting</p>
                                 <Chart />*/}
                             </div>
+                            {cardClick && (
+                                <div className='z-10'>
+                                    <Chart />
+                                </div>
+                            )}
                             <div className="absolute inset-0 z-[15] bg-cyan-800 w-4/5 h-full origin-left transition transform duration-500 hover:scale-x-[1.2]"></div>
                             <div className="absolute inset-0 z-20 bg-cyan-700 w-3/5 h-full origin-left transition transform duration-500 hover:scale-x-[1.25]"></div>
                             <div className="absolute z-[25] inset-0  p-4 bg-cyan-600 rounded w-2/5 h-full origin-left transform transition duration-500 hover:scale-x-[1.2] overflow-hidden"></div>
