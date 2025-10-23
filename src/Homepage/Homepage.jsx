@@ -41,19 +41,23 @@ function Homepage() {
                     </div>
                 </motion.div>*/}
                 <div className='flex flex-row pr-20  my-44'>
-                    <div className='p-0 h-full flex flex-col items-center justify-center text-black  rounded-md mr-52 w-4/6'>
+                    <div className='relative p-0 h-full flex flex-col items-center justify-center rounded-md mr-52 w-4/6'>
                         <Stacks />
+                        <p className='absolute inset-0 z-50 text-slate-50 flex items-center justify-center text-center'>Create a team and plan together<br />with our intuitive project management tools</p>
                     </div>
 
-                    <section>
-                        <motion.div className='p-10 mx-6 flex flex-col items-center justify-self-end border-2 border-cyan-500 text-black h-full rounded-md '
+                    <section className='w-2/6'>
+                        <motion.div className='p-10 ml-6 mx-3 flex flex-col items-center justify-self-end border-2 border-cyan-500 text-black h-full rounded-md '
                             initial={{ rotateZ: 0 }}
                             whileInView={{ rotateZ: -10 }}
                             viewport={{ amount: 0.5 }}
                             transition={{ duration: 2, ease: "easeInOut" }}>
-                            <h1 className='text-2xl font-bold text-center'>Our Journey</h1>
-                            <p>We have started becoming better as people but never fixing our behaviour</p>
-
+                            <h1 className='text-2xl font-bold text-center mb-4'>Your Journey</h1>
+                            <div>
+                                <p className='text-start pb-1'>Move with vision every step of the way</p>
+                                <p className='text-start pb-1'>Achieve your goals with confidence</p>
+                                <p className='text-start pb-1'>Make a difference in your daily progress</p>
+                            </div>
                         </motion.div>
                     </section>
                 </div>
