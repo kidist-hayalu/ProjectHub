@@ -26,14 +26,14 @@ function Project() {
               <div className='w-1/2 h-4/5 m-20 relative bg-white shadow-lg'>
                 <NewProject className="shadow-lg w-96 p-6 rounded" />
                 <div className='mt-4 flex absolute top-1 right-6 justify-end'>
-                  <button onClick={() => setIsOpen(false)} className='p-2 rounded-full'><X /></button>
+                  <button onClick={() => setIsOpen(false)} className='p-2 rounded-full border-none'><X /></button>
                 </div>
               </div>
             </div>)}
 
         </div>
-        <div className='flex flex-row'>
-          <div className='w-1/4 mx-6 py-12 rounded-sm shadow-md flex flex-row'>
+        <div className='flex flex-row mb-3'>
+          <div className='w-1/4 mx-6 py-12 rounded-sm shadow-md flex flex-row hover:shadow-lg'>
             <img src='/assets/hourglass-half-solid-full.svg' alt="Link List Icon" className='w-14 h-14 mx-2' />
             <div className='flex flex-col'>
               <p className='text-3xl font-bold'>{Data.length}</p>
@@ -41,7 +41,7 @@ function Project() {
             </div>
 
           </div>
-          <div className='w-1/4 mx-6 py-12 rounded-sm shadow-md flex flex-row'>
+          <div className='w-1/4 mx-6 py-12 rounded-sm shadow-md flex flex-row hover:shadow-lg'>
             <img src='/assets/users-line-solid-full.svg' alt="Link List Icon" className='w-14 h-14 mx-2' />
             <div className='flex flex-col'>
               <p className='text-3xl font-bold'>{Data.length}</p>
@@ -49,14 +49,14 @@ function Project() {
             </div>
 
           </div>
-          <div className='w-1/4 mx-6 py-12 rounded-sm shadow-md flex flex-row'>
+          <div className='w-1/4 mx-6 py-12 rounded-sm shadow-md flex flex-row hover:shadow-lg'>
             <img src='/assets/list-check-solid-full.svg' alt="Link List Icon" className='w-14 h-14 mx-2' />
             <div className='flex flex-col'>
               <p className='text-3xl font-bold'>{Data.length}</p>
               <h3 className='font-sans font-semibold'>Completed Projects</h3>
             </div>
             </div>
-            <div className='w-1/4 mx-6 py-12 rounded-sm shadow-md flex flex-row'>
+            <div className='w-1/4 mx-6 py-12 rounded-sm shadow-md flex flex-row hover:shadow-lg'>
               <img src='/assets/chart-line-solid-full.svg' alt="Link List Icon" className='w-14 h-14 mx-2' />
               <div className='flex flex-col'>
                 <p className='text-3xl font-bold'>{Data.length}</p>

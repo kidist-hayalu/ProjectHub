@@ -42,7 +42,9 @@ function Card(props) {
                         className='absolute justify-center z-50 transition-transform origin-top-right right-0 mt-2 w-32 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none'>
                             <div className='py-1 flex flex-col font-sans bg-white items-center justify-center border'>
                                 <a href='#' className='p-3 rounded' onClick={() => setIsOpen(true)}>To Do</a>
+                                <Link to={"/Teams"}>
                                 <a href='#' className='p-3 rounded '>Team</a>
+                                </Link>
                                 <Link to={"/Report"}>
                                 <a href='#' className='p-3 rounded '>Report</a>
                                 </Link>
