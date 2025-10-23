@@ -21,11 +21,11 @@ function Homepage() {
             <HomepageNav className='bg-slate-50' />
 
             <div className='container'>
-                <div className='py-60 flex flex-col items-center justify-center bg-gradient-to-br from-cyan-700 via-cyan-800 to-cyan-900 shadow-xl rounded-b-2xl'>
-                    <h1 className='text-7xl font-bold text-center text-white mt-10'>Welcome to ProjectHub</h1>
-                    <p className='text-white p-3 font-semibold text-center'>Where your projects come to life and your team becomes one </p>
-                    <div className='p-2 rounded-3xl bg-cyan-700  backdrop-blur-lg backdrop-opacity-25  hover:bg-cyan-800 transition duration-200 hover:scale-105'>
-                        <Link to={'/Login'} className='text-white '>Start project</Link>
+                <div className='py-60 flex flex-col items-center justify-center bg-gradient-to-b from-cyan-700 to-slate-0 rounded-b-2xl'>
+                    <h1 className='text-5xl font-bold text-center text-slate-50 mt-10'>Welcome to ProjectHub</h1>
+                    <p className='text-slate-50 py-3 text-xl font-semibold text-center'>Where your projects come to life and your team becomes one </p>
+                    <div className='p-2 rounded-3xl backdrop-blur-lg backdrop-opacity-25  hover:bg-slate-100 transition duration-200 hover:scale-105'>
+                        <Link to={'/Login'} className='text-white'>Start project</Link>
                     </div>
                 </div>
 
