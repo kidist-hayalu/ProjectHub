@@ -7,7 +7,7 @@ function Login() {
 
     const [isOpen, setIsOpen] = useState(false);
 
-    const [user, setUser] = useState([]);
+    const [username, setUserName] = useState([]);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirm, setConfirm] = useState("");
@@ -56,17 +56,22 @@ function Login() {
     }
 
     return (
-        <div className="h-screen w-full bg-gradient-to-br from-cyan-700 via-cyan-800 to-cyan-900 flex justify-center items-center">
-            <div className="relative flex flex-row items-center justify-center bg-gradient-to-bl from-slate-50 via-slate-100 to-slate-200 w-3/5 h-4/5 rounded-md shadow-lg">
-                <motion.div className={`w-1/2 top-0 left-0 items-center justify-center bg-cyan-700 h-full p-6 ${isOpen ? 'z-10' : 'z-0'}`}
+        <div className="h-screen w-full bg-gradient-to-br from-cyan-600 via-cyan-600 to-cyan-700 flex justify-center items-center">
+            <div className="rounded-full z-0 absolute bg-cyan-800 top-2 right-40 w-60 h-60 shadow-md"></div>
+            <div className="rounded-full z-10 absolute bg-cyan-800 top-28 left-56 w-32 h-32 border border-cyan-700 shadow-md"></div>
+            <div className="rounded-full z-0 absolute bg-cyan-800 top-2 left-28 w-52 h-52 shadow-md"></div>
+            <div className="rounded-full z-0 absolute bg-cyan-800 bottom-2 left-40 w-56 h-56 shadow-md"></div>
+            <div className="rounded-full z-0 absolute bg-cyan-800 bottom-24 right-14 w-40 h-40 shadow-md"></div>
+            <div className="inset-0 z-20 relative flex flex-row items-center justify-center bg-gradient-to-bl from-slate-50 via-slate-100 to-slate-200 w-3/5 h-4/5 rounded-md shadow-lg">
+                <motion.div className={`w-1/2 top-0 left-0 items-center justify-center bg-cyan-600 h-full p-6 ${isOpen ? 'z-10' : 'z-0'}`}
                     animate={{ x: isOpen ? '100%' : '0%' }}
-                    transition={{ duration: 0.5, ease: "easeInOut" }}>
+                    transition={{ duration: 0.45, ease: "easeInOut" }}>
                     <div className="w-full h-full flex flex-col items-center justify-center  shadow-xl rounded-lg bg-white/25">
                         {!isOpen &&( <div className="flex flex-col items-center"><p className="text-center text-white">Login to continue from where you've stopped <br />or create an account to explore</p>
                         <span onClick={() => { setIsOpen(!isOpen) }} className="mt-4 mb-2 cursor-pointer text-center text-white">Sign Up</span></div>)
                         }
-                        {isOpen && (<div className="flex flex-col items-center"><p className="text-center text-white">Sign Up with a new account</p>
-                        <span onClick={() => { setIsOpen(!isOpen) }} className="mt-4 mb-2 cursor-pointer text-center text-white">Sign In</span></div>)}
+                        {isOpen && (<div className="flex flex-col items-center"><p className="text-center text-white">Sign Up with a new account<br/> or</p>
+                        <span onClick={() => { setIsOpen(!isOpen) }} className="mt-2 mb-2 cursor-pointer text-center text-white">Sign In</span></div>)}
                     </div>
                 </motion.div>
                 
@@ -110,11 +115,12 @@ function Login() {
                             </div>
                             <form className="pl-28 pr-14">
                             <input type="text" value={email} onChange={changeEmail} placeholder="Enter your Email" className="my-4 border-solid border-black w-5/6 px-2 rounded border border-opacity-30" />
-                            <input type="password" value={password} onChange={changePassword} placeholder="Enter Password" className="my-4 border-solid border-black w-5/6 px-2 rounded border border-opactiy-30" />
+                            <input type="text" value={username} onChange={(e) => setUserName(e.target.value)} placeholder="Enter New Username" className="my-4 border-solid border-black w-5/6 px-2 rounded border border-opacity-30" />
+                            <input type="password" value={password} onChange={changePassword} placeholder="Enter Password" className="my-4 border-solid border-black w-5/6 px-2 rounded border border-opacity-30" />
                             <input type="password" value={confirm} onChange={changeConfirm} placeholder="Confirm Password" className="my-4 border-solid border-black w-5/6 px-2 rounded border border-opacity-30" />
                            </form> 
                            <Link to={"/Dashboard"}>
-                                <button onClick={handleClick} className="my-4">Sign In</button>
+                                <button onClick={handleClick} className="my-4">Sign Up</button>
                             </Link>
                             
                         </div>
