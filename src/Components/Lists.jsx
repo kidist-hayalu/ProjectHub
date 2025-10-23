@@ -20,7 +20,7 @@ function Lists() {
         <header className='fixed top-0 left-0 w-full z-50 bg-white shadow-md bg-transparent '>
             <div className="sticky top-0">
                 <nav className="nav py-2">
-                    <div className="mr-96 flex justify-normal ml-6">
+                    <div className="flex justify-normal ml-20">
                         <div className="flex-1 justify-self-start mr-2 bg-gradient-to-tr from-cyan-500 via-cyan-500 to-cyan-600 rounded">
                             <BarChart3Icon style={{ color: "white", width: `1.65rem`, height: `1.65rem` }} />
                         </div>
@@ -29,8 +29,8 @@ function Lists() {
                         </div>
 
                     </div>
-                    <ul className="list-none flex justify-center items-center gap-8 mr-80">{navBarItems}</ul>
-                    <div className="flex flex-row items-center">
+                    <ul className="list-none flex justify-center items-center gap-8 ml-96">{navBarItems}</ul>
+                    <div className="flex flex-row items-center mr-20">
                         <div className="flex flex-row items-center mr-3">
                         <div className="bg-cyan-500 rounded-full p-1 ">
                             <User size={18} />

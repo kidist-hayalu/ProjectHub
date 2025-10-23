@@ -25,7 +25,7 @@ function Homepage() {
                     <h1 className='text-5xl font-bold text-center text-slate-50 mt-10'>Welcome to ProjectHub</h1>
                     <p className='text-slate-50 py-3 text-xl font-semibold text-center'>Where your projects come to life and your team becomes one </p>
                     <div className='p-2 rounded-3xl backdrop-blur-lg backdrop-opacity-25  hover:bg-slate-100 transition duration-200 hover:scale-105'>
-                        <Link to={'/Login'} className='text-white'>Start project</Link>
+                        <Link to={'/Login'} className='text-white hover:text-current'>Start project</Link>
                     </div>
                 </div>
 
