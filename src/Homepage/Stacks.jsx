@@ -6,9 +6,9 @@ function Stacks() {
     return(
         <>
         <motion.div className='relative flex items-start justify-self-start w-96 h-96 '
-                                initial={{ scale:0.9, opacity: 0 }}
-                                whileInView={{ scale: 1, opacity: 1 }}
-                                viewport={{ amount: 0.75 }}
+                                initial={{ scale: 1, opacity: 0 }}
+                                whileInView={{ scale: 1.1, opacity: 1 }}
+                                viewport={{ amount: 0.15 }}
                                 transition={{ duration: 0.65, ease: "easeInOut" }}>
                                     <div className='absolute opacity-50 bg-cyan-600 z-0 inset-0 -translate-x-80 -translate-y-6 transform rotate-45 rounded-lg' ></div>
                                     <div className='absolute opacity-50 bg-cyan-600 z-10 inset-0 -translate-x-72 translate-y-12 transform rotate-45 rounded-lg' ></div>

@@ -23,7 +23,7 @@ function Homepage() {
             <HomepageNav className='bg-slate-50' />
 
             <div className='container'>
-                <div className='py-60 flex flex-col items-center justify-center bg-gradient-to-b from-cyan-700 to-slate-0 rounded-b-2xl'>
+                <div className='py-60 flex flex-col items-center justify-center bg-gradient-to-b from-cyan-700 via-cyan-600 to-white rounded-b-2xl'>
                     <h1 className='text-5xl font-bold text-center text-slate-50 mt-10'>Welcome to ProjectHub</h1>
                     <p className='text-slate-50 py-3 text-xl font-semibold text-center'>Where your projects come to life and your team becomes one </p>
                     <div className='p-2 rounded-3xl backdrop-blur-lg backdrop-opacity-25  hover:bg-slate-100/30 transition duration-200 hover:scale-105  '>
@@ -45,7 +45,7 @@ function Homepage() {
                 <div className='flex flex-row pr-20  my-44'>
                     <div className='relative p-0 h-full flex flex-col items-center justify-center rounded-md mr-52 w-4/6'>
                         <Stacks />
-                        <p className='absolute inset-0 z-50 text-slate-50 flex items-center justify-center text-center'>Create a team and plan together<br />with our intuitive project management tools</p>
+                        <p className='absolute inset-0 z-50 text-slate-50 flex items-center justify-center text-center'>Create your own team and plan together<br />with our intuitive project management tools</p>
                     </div>
 
                     <section className='w-2/6'>
@@ -77,12 +77,13 @@ function Homepage() {
                     </section>
                 </div>
                 <div className='flex flex-row h-screen px-10'>
-                    <div className='p-10 ml-10 flex flex-col items-center justify-center w-full'>
+                    <div className='p-10 ml-2 flex flex-col items-center justify-center w-full'>
                         <div className="relative flex items-center justify-center w-full h-full">
-                            <div className="absolute inset-0 z-10 bg-cyan-900 w-full h-full origin-left transition transform duration-500 hover:scale-x-[1.05]">
+                            <div className="absolute inset-0 z-10 bg-cyan-900 w-full h-full origin-left transition transform duration-500 hover:scale-x-[1.05]" onChange={() => setCardClick(!cardClick)}>
                                 {/*<p>Explore Progress Charting</p>
                                 <Chart />*/}
                             </div>
+                            {cardClick && <Chart />}
                             
                             <div className="absolute inset-0 z-[15] bg-cyan-800 w-4/5 h-full origin-left transition transform duration-500 hover:scale-x-[1.2]"></div>
                             <div className="absolute inset-0 z-20 bg-cyan-700 w-3/5 h-full origin-left transition transform duration-500 hover:scale-x-[1.25]"></div>
