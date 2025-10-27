@@ -76,24 +76,31 @@ function Homepage() {
                         </motion.div>
                     </section>
                 </div>
-                <div className='flex flex-row h-screen px-10'>
-                    <div className='p-10 ml-2 flex flex-col items-center justify-center w-full'>
-                        <div className="relative flex items-center justify-center w-full h-full">
-                            <div className="absolute inset-0 z-10 bg-cyan-900 w-full h-full origin-left transition transform duration-500 hover:scale-x-[1.05]" onChange={() => setCardClick(!cardClick)}>
-                                {/*<p>Explore Progress Charting</p>
-                                <Chart />*/}
+                <div className='flex flex-row h-screen px-6'>
+                    <div className='py-10 flex flex-row w-full'>
+                        
+                        <div className="relative mt-2 flex items-center justify-center w-1/2 h-full overflow-visible">
+                            <div className="absolute inset-0 z-10 bg-cyan-900 w-full h-full origin-left shadow-md transition transform duration-700 hover:scale-x-[2]" onMouseEnter={() => setCardClick(true)} onMouseLeave={() => setCardClick(false)}>
+                                {cardClick && (<div className='inset-0 absolute flex items-center justify-center'>
+                                <Chart className="z-20"/></div>
+                                ) }
                             </div>
-                            {cardClick && <Chart />}
                             
-                            <div className="absolute inset-0 z-[15] bg-cyan-800 w-4/5 h-full origin-left transition transform duration-500 hover:scale-x-[1.2]"></div>
-                            <div className="absolute inset-0 z-20 bg-cyan-700 w-3/5 h-full origin-left transition transform duration-500 hover:scale-x-[1.25]"></div>
-                            <div className="absolute z-[25] inset-0  p-4 bg-cyan-600 rounded w-2/5 h-full origin-left transform transition duration-500 hover:scale-x-[1.2] overflow-hidden"></div>
-                            <div className='absolute z-[30] inset-0 flex items-center justify-center p-4 pointer-events-none w-2/5'>
-                                <p className='text-white'>Explore Various options to Collaborating with teammates</p>
-
-                            </div>
+                            
+                            <div className="absolute inset-0 z-[15] bg-cyan-800 w-3/4 h-full origin-left transition transform duration-700 shadow-md hover:scale-x-[2.67]"></div>
+                            <div className="absolute inset-0 z-20 bg-cyan-700 w-2/4 h-full origin-left transition transform duration-700 shadow-md hover:scale-x-[4]"></div>
+                            <div className="absolute z-[25] inset-0  p-4 bg-cyan-600 w-1/4 h-full origin-left transform transition duration-700  hover:shadow-lg hover:scale-x-[8]"></div>
+                            
 
                         </div>
+                        <div className='z-0 inset-0 flex items-center w-1/4 justify-center ml-56 p-4 pointer-events-none my-2'>
+                                <motion.p className='text-black font-heading font-bold'
+                                initial={{ x: 100, opacity: 0 }}
+                                whileInView={{ x: 0, opacity: 1 }}
+                                transition={{ duration: 1 }}>
+                                    Explore Various options to Collaborating with teammates</motion.p>
+
+                            </div>
 
                     </div>
 
