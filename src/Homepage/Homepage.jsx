@@ -1,7 +1,7 @@
 import HomepageNav from './HomepageNav.jsx';
 import Chart from '../Report/Chart.jsx'
 import { Link } from 'react-router-dom';
-import {useState} from 'react';
+import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Carousel from './Carousel.jsx';
 import { motion, useScroll, useTransform } from 'framer-motion';
@@ -16,6 +16,7 @@ function Homepage() {
     const opacity = useTransform(scrollY, [0, 300], [0, 1]);
 
     const [cardClick, setCardClick] = useState(false);
+    const [teamWork, setTeamWork] = useState(false);
 
     return (
         <>
@@ -23,7 +24,7 @@ function Homepage() {
             <HomepageNav className='bg-slate-50' />
 
             <div className='container'>
-                <div className='py-60 flex flex-col items-center justify-center bg-gradient-to-b from-cyan-700 via-cyan-600 to-white rounded-b-2xl'>
+                <div className='py-60 flex flex-col items-center justify-center bg-gradient-to-b from-cyan-700 via-cyan-500 to-slate-50 '>
                     <h1 className='text-5xl font-bold text-center text-slate-50 mt-10'>Welcome to ProjectHub</h1>
                     <p className='text-slate-50 py-3 text-xl font-semibold text-center'>Where your projects come to life and your team becomes one </p>
                     <div className='p-2 rounded-3xl backdrop-blur-lg backdrop-opacity-25  hover:bg-slate-100/30 transition duration-200 hover:scale-105  '>
@@ -50,60 +51,76 @@ function Homepage() {
 
                     <section className='w-2/6'>
 
-                    <motion.div className='ml-6 mx-3 flex flex-col items-center justify-self-end border-2 border-cyan-500 text-black h-full rounded-md '
-                    initial={{ rotateZ: 0 }}
-                    whileInView={{ rotateZ: 5 }}
-                    viewport={{ amount: 0.5 }}
-                    transition={{ duration: 2, ease: "easeInOut" }}>
-                        <motion.div className='z-10 bg-white flex flex-col items-center justify-self-end border-2 border-cyan-500 text-black h-full rounded-md '
+                        <motion.div className='ml-6 mx-3 flex flex-col items-center justify-self-end border-2 border-cyan-500 text-black h-full rounded-md '
                             initial={{ rotateZ: 0 }}
-                            whileInView={{ rotateZ: -7 }}
+                            whileInView={{ rotateZ: 5 }}
                             viewport={{ amount: 0.5 }}
                             transition={{ duration: 2, ease: "easeInOut" }}>
-                        <motion.div className='p-10 z-10 bg-white flex flex-col items-center justify-self-end border-2 border-cyan-500 text-black h-full rounded-md '
-                            initial={{ rotateZ: 0 }}
-                            whileInView={{ rotateZ: -10 }}
-                            viewport={{ amount: 0.5 }}
-                            transition={{ duration: 2, ease: "easeInOut" }}>
-                            <h1 className='text-2xl font-bold text-center mb-4'>Your Journey</h1>
-                            <div className='z-20'>
-                                <p className='text-start pb-1'>Move with vision every step of the way</p>
-                                <p className='text-start pb-1'>Achieve your goals with confidence</p>
-                                <p className='text-start pb-1'>Make a difference in your daily progress</p>
-                            </div>
-                        </motion.div>
-                        </motion.div>
+                            <motion.div className='z-10 bg-white flex flex-col items-center justify-self-end border-2 border-cyan-500 text-black h-full rounded-md '
+                                initial={{ rotateZ: 0 }}
+                                whileInView={{ rotateZ: -7 }}
+                                viewport={{ amount: 0.5 }}
+                                transition={{ duration: 2, ease: "easeInOut" }}>
+                                <motion.div className='p-10 z-10 bg-white flex flex-col items-center justify-self-end border-2 border-cyan-500 text-black h-full rounded-md '
+                                    initial={{ rotateZ: 0 }}
+                                    whileInView={{ rotateZ: -10 }}
+                                    viewport={{ amount: 0.5 }}
+                                    transition={{ duration: 2, ease: "easeInOut" }}>
+                                    <h1 className='text-2xl font-bold text-center mb-4'>Your Journey</h1>
+                                    <div className='z-20'>
+                                        <p className='text-start pb-1'>Move with vision every step of the way</p>
+                                        <p className='text-start pb-1'>Achieve your goals with confidence</p>
+                                        <p className='text-start pb-1'>Make a difference in your daily progress</p>
+                                    </div>
+                                </motion.div>
+                            </motion.div>
                         </motion.div>
                     </section>
                 </div>
                 <div className='flex flex-row h-screen px-6'>
                     <div className='py-10 flex flex-row w-full'>
-                        
-                        <div className="relative mt-2 flex items-center justify-center w-1/2 h-full overflow-visible">
-                            <div className="absolute inset-0 z-10 bg-cyan-900 w-full h-full origin-left shadow-md transition transform duration-700 hover:scale-x-[2]" onMouseEnter={() => setCardClick(true)} onMouseLeave={() => setCardClick(false)}>
-                                {cardClick && (<div className='inset-0 absolute flex items-center justify-center'>
-                                <Chart className="z-20"/></div>
-                                ) }
-                            </div>
-                            
-                            
+
+                        <div className="relative mt-2 flex items-center justify-center w-1/2 overflow-visible">
+                            <div className="absolute inset-0 z-10 bg-cyan-900 w-full h-full origin-left shadow-md transition transform duration-700 hover:scale-x-[2]" onMouseEnter={() => setCardClick(true)} onMouseLeave={() => setCardClick(false)}></div>
+
+
                             <div className="absolute inset-0 z-[15] bg-cyan-800 w-3/4 h-full origin-left transition transform duration-700 shadow-md hover:scale-x-[2.67]"></div>
                             <div className="absolute inset-0 z-20 bg-cyan-700 w-2/4 h-full origin-left transition transform duration-700 shadow-md hover:scale-x-[4]"></div>
-                            <div className="absolute z-[25] inset-0  p-4 bg-cyan-600 w-1/4 h-full origin-left transform transition duration-700  hover:shadow-lg hover:scale-x-[8]"></div>
-                            
+                            <div className="absolute z-[25] inset-0  p-4 bg-cyan-600 w-1/4 h-full origin-left transform transition duration-700  hover:shadow-lg hover:scale-x-[8]" onMouseEnter={() => setTeamWork(true)} onMouseLeave={() => setTeamWork(false)}></div>
+                            <div className={`absolute top-8 left-3/4 ml-2 items-center mr-4 w-full z-30 transition-opacity duration-200 ${cardClick ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
+                                <div className=' h-full rounded shadow p-2'>
+                                    <Chart className="h-full text-white" />
+                                </div>
+                            </div>
+                            <div className={`absolute top-8 left-3/4 ml-2 items-center mr-4 w-full z-40 transition-opacity duration-200 ${teamWork ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
+                                <div className=' h-full rounded shadow p-2'>
+                                    <Chart className="h-full text-white" />
+                                </div>
+                            </div>
 
                         </div>
                         <div className='z-0 inset-0 flex items-center w-1/4 justify-center ml-56 p-4 pointer-events-none my-2'>
-                                <motion.p className='text-black font-heading font-bold'
+                            <motion.p className='text-black font-heading font-bold'
                                 initial={{ x: 100, opacity: 0 }}
                                 whileInView={{ x: 0, opacity: 1 }}
                                 transition={{ duration: 1 }}>
-                                    Explore Various options to Collaborating with teammates</motion.p>
+                                Everything you need to keep your project on track<br />
+                                Explore Various options to Collaborating with teammates</motion.p>
 
-                            </div>
+                        </div>
 
                     </div>
 
+                </div>
+                <div className='pb-12 px-56 fflex items-center justify-center'>
+                    <div className='flex flex-col w-2/3 rounded-xl shadow-md py-4 ml-44 font-bold font-heading text-cyan-900 items-center justify-center bg-white'>
+                        <h1 className='my-2'>Ready to streamline your projects?</h1>
+                        <p className='mb-2'>Join us today and take your project management to the next level!</p>
+                        <div className='p-2 rounded-3xl backdrop-blur-lg backdrop-opacity-25  hover:bg-slate-100/30 transition duration-200 hover:scale-105  '>
+                            <Link to={'/Login'} className='text-cyan-900 hover:text-cyan-900'>Start project</Link>
+                        </div>
+
+                    </div>
                 </div>
             </div>
             <footer className="border-t-2 bg-slate-50 pb-6 pt-6">
