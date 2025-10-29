@@ -4,16 +4,16 @@ import { Link } from "react-router-dom";
 function HomepageNav() {
 
     const navBar = [
-        { id: 1, name: 'About Us' },
-        { id: 2, name: 'Community' },
-        { id: 3, name: 'Services' },
-        { id: 4, name: 'Contact' }];
+        { id: 1, name: 'About Us', Link: '#About' },
+        { id: 2, name: 'Community', Link: '#Community' },
+        { id: 3, name: 'Services', Link: '#Services' },
+        { id: 4, name: 'Contact', Link: '#Contact' }];
 
-    const navBarItems = navBar.map((bar) => <li key={bar.id} className="navBarItems hover:scale-110">{bar.name}</li>);
+    const navBarItems = navBar.map((bar) => <li key={bar.id} className="navBarItems hover:scale-110"><a href={bar.Link}>{bar.name}</a></li>);
 
     return (
         <>
-            <header className='fixed top-0 left-0 w-full z-50 bg-white shadow-md bg-transparent '>
+            <header className='fixed top-0 left-0 w-full z-50 bg-white shadow-md  '>
                 <div className="sticky top-0">
                     <nav className="nav py-2">
                         <div className="ml-20 flex justify-normal">

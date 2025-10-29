@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import Carousel from './Carousel.jsx';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Stacks from './stacks.jsx';
+import { BarChart3Icon, Settings, User } from "lucide-react";
 import { Instagram, Linkedin, Facebook, Youtube, Twitter, CopyrightIcon } from 'lucide-react';
 
 
@@ -18,13 +19,15 @@ function Homepage() {
     const [cardClick, setCardClick] = useState(false);
     const [teamWork, setTeamWork] = useState(false);
 
+    
+
     return (
         <>
+            <HomepageNav />
 
-            <HomepageNav className='bg-slate-50' />
 
             <div className='container'>
-                <div className='py-60 mb-20 flex flex-col items-center justify-center bg-gradient-to-b from-cyan-700 via-cyan-500 to-slate-50 '>
+                <div className='py-60 mb-20 flex flex-col items-center justify-center bg-gradient-to-b from-cyan-700  to-slate-50 '>
                     <h1 className='text-5xl font-bold text-center text-slate-50 mt-10'>Welcome to ProjectHub</h1>
                     <p className='text-slate-50 py-3 text-xl font-semibold text-center'>Where your projects come to life and your team becomes one </p>
                     <div className='p-2 rounded-3xl backdrop-blur-lg backdrop-opacity-25  hover:bg-slate-100/30 transition duration-200 hover:scale-105  '>
@@ -43,7 +46,7 @@ function Homepage() {
 
                     </div>
                 </motion.div>*/}
-                <div className='flex flex-row pr-20  my-52'>
+                <div className='flex flex-row pr-20  mt-60 mb-52 scroll-mt-40' id='About'>
                     <div className='relative p-0 h-full flex flex-col items-center justify-center rounded-md mr-52 w-4/6'>
                         <Stacks />
                         <p className='absolute inset-0 z-50 text-slate-50 flex items-center justify-center text-center'>Create your own team and plan together<br />with our intuitive project management tools</p>
@@ -77,8 +80,8 @@ function Homepage() {
                         </motion.div>
                     </section>
                 </div>
-                <div className='flex flex-col justify-center items-center my-10'>
-                    <h1 className='w-1/2 text-center mx-10 mt-10 mb-20 font-heading font-semibold text-2xl'>Our Platform Is Designed to help you manage your projects with ease and efficiency, from initial planning to final delivery.</h1>
+                <div className='flex flex-col justify-center items-center mt-10 mb-20 scroll-mt-10' id='Community'>
+                    <h1 className='w-1/2 text-center mx-10 mt-10 mb-14 font-heading font-semibold text-2xl'style={{ lineHeight: '2'}}>Our Platform Is Designed to help you manage your projects with ease and efficiency, from initial planning to final delivery.</h1>
                     <motion.div className='flex flex-row justify-center items-center px-12'
                     initial={{ opacity: 0, x:100,y:50 }}
                     whileInView={{ opacity: 1, x:0 ,y:0 }}
@@ -100,7 +103,7 @@ function Homepage() {
                     </div>
                 </motion.div>
                 </div>
-                <div className='flex flex-row h-screen px-6'>
+                <div className='flex flex-row h-screen px-6 scroll-mt-10' id='Services'>
                     <div className='py-10 flex flex-row w-full'>
 
                         <div className="relative mt-2 flex items-center justify-center w-1/2 overflow-visible">
@@ -122,10 +125,10 @@ function Homepage() {
                             </div>
 
                         </div>
-                        <div className='z-0 inset-0 flex items-center justify-center ml-20 p-4 pointer-events-none my-2'>
+                        <div className='z-0 inset-0 flex items-center justify-center p-4 pointer-events-none my-2'>
                             <motion.p className='text-black font-heading font-bold text-xl text-center'
-                                initial={{ x: 100, opacity: 0 }}
-                                whileInView={{ x: 0, opacity: 1 }}
+                                initial={{ x: 0, opacity: 0 }}
+                                whileInView={{ x: 80, opacity: 1 }}
                                 transition={{ duration: 1 }}>
                                 Everything you need to keep your project on track<br />
                                 Explore Various options to Collaborating with teammates</motion.p>
@@ -135,7 +138,7 @@ function Homepage() {
                     </div>
 
                 </div>
-                <div className='pb-12 px-56 fflex items-center justify-center'>
+                <div className='pb-12 px-56 fflex items-center justify-center scroll-mt-10'>
                     <div className='flex flex-col w-2/3 rounded-xl shadow-md py-4 ml-44 font-bold font-heading text-cyan-900 items-center justify-center bg-white'>
                         <h1 className='my-2'>Ready to streamline your projects?</h1>
                         <p className='mb-2'>Join us today and take your project management to the next level!</p>
@@ -146,7 +149,7 @@ function Homepage() {
                     </div>
                 </div>
             </div>
-            <footer className="border-t-2 bg-slate-50 pb-6 pt-6">
+            <footer className="border-t-2 bg-slate-100 pb-6 pt-6 scroll-mt-10" id='Contact'>
                 <div className="flex flex-wrap gap-8 justify-space-between">
                     <div className="min-w-60 flex flex-col ml-36 gap-5" style={{ flex: '1 1 300px' }}>
 
