@@ -24,7 +24,7 @@ function Homepage() {
             <HomepageNav className='bg-slate-50' />
 
             <div className='container'>
-                <div className='py-60 flex flex-col items-center justify-center bg-gradient-to-b from-cyan-700 via-cyan-500 to-slate-50 '>
+                <div className='py-60 mb-20 flex flex-col items-center justify-center bg-gradient-to-b from-cyan-700 via-cyan-500 to-slate-50 '>
                     <h1 className='text-5xl font-bold text-center text-slate-50 mt-10'>Welcome to ProjectHub</h1>
                     <p className='text-slate-50 py-3 text-xl font-semibold text-center'>Where your projects come to life and your team becomes one </p>
                     <div className='p-2 rounded-3xl backdrop-blur-lg backdrop-opacity-25  hover:bg-slate-100/30 transition duration-200 hover:scale-105  '>
@@ -43,7 +43,7 @@ function Homepage() {
 
                     </div>
                 </motion.div>*/}
-                <div className='flex flex-row pr-20  my-44'>
+                <div className='flex flex-row pr-20  my-52'>
                     <div className='relative p-0 h-full flex flex-col items-center justify-center rounded-md mr-52 w-4/6'>
                         <Stacks />
                         <p className='absolute inset-0 z-50 text-slate-50 flex items-center justify-center text-center'>Create your own team and plan together<br />with our intuitive project management tools</p>
@@ -77,6 +77,29 @@ function Homepage() {
                         </motion.div>
                     </section>
                 </div>
+                <div className='flex flex-col justify-center items-center my-10'>
+                    <h1 className='w-1/2 text-center mx-10 mt-10 mb-20 font-heading font-semibold text-2xl'>Our Platform Is Designed to help you manage your projects with ease and efficiency, from initial planning to final delivery.</h1>
+                    <motion.div className='flex flex-row justify-center items-center px-12'
+                    initial={{ opacity: 0, x:100,y:50 }}
+                    whileInView={{ opacity: 1, x:0 ,y:0 }}
+                    transition={{ duration: 1 }}>
+                    <div className='p-12 flex flex-col justify-start items-start bg-white rounded-lg shadow-lg mx-4 hover:shadow-xl transition-shadow duration-200'>
+                        <img src="../assets/circle-check-regular-full.svg" alt="Task Management" className="mb-2 w-10 h-10" />
+                        <h1 className='font-semibold py-3 font-heading text-lg'>Task Management</h1>
+                        <p>Organize, assign, and Prioritize your tasks with task assignments and overall progress.</p>
+                        </div>
+                    <div className='p-12 flex flex-col justify-start items-start bg-white rounded-lg shadow-lg mx-4 hover:shadow-xl transition-shadow duration-200'>
+                        <img src="../assets/users-line-solid-full.svg" alt="Task Management" className="mb-2 w-12 h-12" />
+                        <h1 className='font-semibold py-3 font-heading text-lg'>Real-time Collaboration</h1>
+                        <p>Work together with your team in real-time, share updates, and get feedback instantly.</p>
+                    </div>
+                    <div className='p-12 flex flex-col justify-start items-start bg-white rounded-lg shadow-lg mx-4'>
+                        <img src="../assets/chart-simple-solid-full.svg" alt="Task Management" className="mb-2 w-10 h-10" />
+                        <h1 className='font-semibold font-heading py-3 text-lg'>Insightful Analytics</h1>
+                        <p>Gain valuable insights into your project’s progress with our analytics tools.</p>
+                    </div>
+                </motion.div>
+                </div>
                 <div className='flex flex-row h-screen px-6'>
                     <div className='py-10 flex flex-row w-full'>
 
@@ -87,20 +110,20 @@ function Homepage() {
                             <div className="absolute inset-0 z-[15] bg-cyan-800 w-3/4 h-full origin-left transition transform duration-700 shadow-md hover:scale-x-[2.67]"></div>
                             <div className="absolute inset-0 z-20 bg-cyan-700 w-2/4 h-full origin-left transition transform duration-700 shadow-md hover:scale-x-[4]"></div>
                             <div className="absolute z-[25] inset-0  p-4 bg-cyan-600 w-1/4 h-full origin-left transform transition duration-700  hover:shadow-lg hover:scale-x-[8]" onMouseEnter={() => setTeamWork(true)} onMouseLeave={() => setTeamWork(false)}></div>
-                            <div className={`absolute top-8 left-3/4 ml-2 items-center mr-4 w-full z-30 transition-opacity duration-200 ${cardClick ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
+                            <div className={`absolute top-8 left-3/4 ml-2 items-center bg-white mr-4 w-full z-30 transition-opacity duration-200 ${cardClick ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
                                 <div className=' h-full rounded shadow p-2'>
                                     <Chart className="h-full text-white" />
                                 </div>
                             </div>
-                            <div className={`absolute top-8 left-3/4 ml-2 items-center mr-4 w-full z-40 transition-opacity duration-200 ${teamWork ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
+                            <div className={`absolute top-8 left-3/4 ml-2 items-center mr-4 bg-white w-full z-40 transition-opacity duration-200 ${teamWork ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
                                 <div className=' h-full rounded shadow p-2'>
                                     <Chart className="h-full text-white" />
                                 </div>
                             </div>
 
                         </div>
-                        <div className='z-0 inset-0 flex items-center w-1/4 justify-center ml-56 p-4 pointer-events-none my-2'>
-                            <motion.p className='text-black font-heading font-bold'
+                        <div className='z-0 inset-0 flex items-center justify-center ml-20 p-4 pointer-events-none my-2'>
+                            <motion.p className='text-black font-heading font-bold text-xl text-center'
                                 initial={{ x: 100, opacity: 0 }}
                                 whileInView={{ x: 0, opacity: 1 }}
                                 transition={{ duration: 1 }}>
@@ -116,8 +139,8 @@ function Homepage() {
                     <div className='flex flex-col w-2/3 rounded-xl shadow-md py-4 ml-44 font-bold font-heading text-cyan-900 items-center justify-center bg-white'>
                         <h1 className='my-2'>Ready to streamline your projects?</h1>
                         <p className='mb-2'>Join us today and take your project management to the next level!</p>
-                        <div className='p-2 rounded-3xl backdrop-blur-lg backdrop-opacity-25  hover:bg-slate-100/30 transition duration-200 hover:scale-105  '>
-                            <Link to={'/Login'} className='text-cyan-900 hover:text-cyan-900'>Start project</Link>
+                        <div className='p-2 rounded-3xl backdrop-blur-lg backdrop-opacity-35  hover:bg-slate-100/50 transition duration-200 hover:scale-105  '>
+                            <Link to={'/Login'} className='text-cyan-900 font-normal hover:text-cyan-900'>Start project</Link>
                         </div>
 
                     </div>
