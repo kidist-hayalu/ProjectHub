@@ -19,7 +19,7 @@ function Homepage() {
     const [cardClick, setCardClick] = useState(false);
     const [teamWork, setTeamWork] = useState(false);
 
-    
+
 
     return (
         <>
@@ -27,23 +27,26 @@ function Homepage() {
 
 
             <div className='container'>
-                <div className='py-60 mb-20 flex flex-col items-center justify-center bg-gradient-to-b from-cyan-700  to-slate-50 '>
-                    <motion.h1
-      initial={{ y: 50, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
+
+                <div className='pt-20 relative mb-20 flex flex-row  bg-gradient-to-b from-gray-50  to-gray-50'>
+
+                    <div className='z-10 ml-10 flex flex-col items-start justify-center w-1/2'>
+                        <motion.h1 className='text-6xl font-bold text-start text-gray-700 '
+                            initial={{ x: -100, opacity: 0 }}
+                            whileInView={{ x: 0, opacity: 1 }}
                             viewport={{ amount: 0.5 }}
-      transition={{ duration: 1, ease: "easeOut" }}
-      className="text-5xl md:text-6xl font-bold text-white"
-    >Welcome to ProjectHub</motion.h1>
-    <motion.p
-      initial={{ y: 50, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-                            viewport={{ amount: 0.5 }}
-      transition={{ delay: 0.2, duration: 1, ease: "easeOut" }}
-      className="mt-4 text-xl md:text-2xl text-slate-100"
-    >Where your projects come to life and your team becomes one</motion.p>
-                    <div className='p-2 rounded-3xl backdrop-blur-lg backdrop-opacity-25  hover:bg-slate-100/30 transition duration-200 hover:scale-105  '>
-                        <Link to={'/Login'} className='text-white hover:text-white'>Start project</Link>
+                            transition={{ duration: 0.8, ease: "easeInOut" }}>Welcome to ProjectHub</motion.h1>
+                        <p className='text-gray-700 py-3 text-3xl font-semibold text-start'>Where your projects come to life and your team becomes one </p>
+                        <div className='p-2 rounded-3xl backdrop-blur-lg backdrop-opacity-25  hover:bg-slate-100/30 transition duration-200 hover:scale-105 flex items-center justify-center '>
+                            <Link to={'/Login'} className='text-gray-700 hover:text-gray-700'>Start project</Link>
+                        </div>
+                    </div>
+                    <div className='z-0 inset-0  opacity-75 w-1/2 mr-4 relative grid grid-cols-2 gap-6 grid-rows-2'>
+                        <img src='./assets/chartdata.svg' className='w-5/6 h-5/6 top-0 right-0' />
+                        <img src='./assets/groupwork.svg' className='w-5/6 h-5/6' />
+                        <img src='./assets/on_pc.svg' className='w-5/6 h-5/6 ml-44' />
+
+
                     </div>
                 </div>
 
@@ -93,27 +96,27 @@ function Homepage() {
                     </section>
                 </div>
                 <div className='flex flex-col justify-center items-center mt-10 mb-20 scroll-mt-10' id='Community'>
-                    <h1 className='w-1/2 text-center mx-10 mt-10 mb-14 font-heading font-semibold text-2xl'style={{ lineHeight: '2'}}>Our Platform Is Designed to help you manage your projects with ease and efficiency, from initial planning to final delivery.</h1>
+                    <h1 className='w-1/2 text-center mx-10 mt-10 mb-14 font-heading font-semibold text-2xl' style={{ lineHeight: '2' }}>Our Platform Is Designed to help you manage your projects with ease and efficiency, from initial planning to final delivery.</h1>
                     <motion.div className='flex flex-row justify-center items-center px-12'
-                    initial={{ opacity: 0, x:100,y:50 }}
-                    whileInView={{ opacity: 1, x:0 ,y:0 }}
-                    transition={{ duration: 1 }}>
-                    <div className='p-12 flex flex-col justify-start items-start bg-white rounded-lg shadow-lg mx-4 hover:shadow-xl transition-shadow duration-200'>
-                        <img src="../assets/circle-check-regular-full.svg" alt="Task Management" className="mb-2 w-10 h-10" />
-                        <h1 className='font-semibold py-3 font-heading text-lg'>Task Management</h1>
-                        <p>Organize, assign, and Prioritize your tasks with task assignments and overall progress.</p>
+                        initial={{ opacity: 0, x: 100, y: 50 }}
+                        whileInView={{ opacity: 1, x: 0, y: 0 }}
+                        transition={{ duration: 1 }}>
+                        <div className='p-12 flex flex-col justify-start items-start bg-white rounded-lg shadow-lg mx-4 hover:shadow-xl transition-shadow duration-200'>
+                            <img src="../assets/circle-check-regular-full.svg" alt="Task Management" className="mb-2 w-10 h-10" />
+                            <h1 className='font-semibold py-3 font-heading text-lg'>Task Management</h1>
+                            <p>Organize, assign, and Prioritize your tasks with task assignments and overall progress.</p>
                         </div>
-                    <div className='p-12 flex flex-col justify-start items-start bg-white rounded-lg shadow-lg mx-4 hover:shadow-xl transition-shadow duration-200'>
-                        <img src="../assets/users-line-solid-full.svg" alt="Task Management" className="mb-2 w-12 h-12" />
-                        <h1 className='font-semibold py-3 font-heading text-lg'>Real-time Collaboration</h1>
-                        <p>Work together with your team in real-time, share updates, and get feedback instantly.</p>
-                    </div>
-                    <div className='p-12 flex flex-col justify-start items-start bg-white rounded-lg shadow-lg mx-4'>
-                        <img src="../assets/chart-simple-solid-full.svg" alt="Task Management" className="mb-2 w-10 h-10" />
-                        <h1 className='font-semibold font-heading py-3 text-lg'>Insightful Analytics</h1>
-                        <p>Gain valuable insights into your project’s progress with our analytics tools.</p>
-                    </div>
-                </motion.div>
+                        <div className='p-12 flex flex-col justify-start items-start bg-white rounded-lg shadow-lg mx-4 hover:shadow-xl transition-shadow duration-200'>
+                            <img src="../assets/users-line-solid-full.svg" alt="Task Management" className="mb-2 w-12 h-12" />
+                            <h1 className='font-semibold py-3 font-heading text-lg'>Real-time Collaboration</h1>
+                            <p>Work together with your team in real-time, share updates, and get feedback instantly.</p>
+                        </div>
+                        <div className='p-12 flex flex-col justify-start items-start bg-white rounded-lg shadow-lg mx-4'>
+                            <img src="../assets/chart-simple-solid-full.svg" alt="Task Management" className="mb-2 w-10 h-10" />
+                            <h1 className='font-semibold font-heading py-3 text-lg'>Insightful Analytics</h1>
+                            <p>Gain valuable insights into your project’s progress with our analytics tools.</p>
+                        </div>
+                    </motion.div>
                 </div>
                 <div className='flex flex-row h-screen px-6 scroll-mt-10' id='Services'>
                     <div className='py-10 flex flex-row w-full'>
