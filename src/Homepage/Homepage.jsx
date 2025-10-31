@@ -28,8 +28,20 @@ function Homepage() {
 
             <div className='container'>
                 <div className='py-60 mb-20 flex flex-col items-center justify-center bg-gradient-to-b from-cyan-700  to-slate-50 '>
-                    <h1 className='text-5xl font-bold text-center text-slate-50 mt-10'>Welcome to ProjectHub</h1>
-                    <p className='text-slate-50 py-3 text-xl font-semibold text-center'>Where your projects come to life and your team becomes one </p>
+                    <motion.h1
+      initial={{ y: 50, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+                            viewport={{ amount: 0.5 }}
+      transition={{ duration: 1, ease: "easeOut" }}
+      className="text-5xl md:text-6xl font-bold text-white"
+    >Welcome to ProjectHub</motion.h1>
+    <motion.p
+      initial={{ y: 50, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+                            viewport={{ amount: 0.5 }}
+      transition={{ delay: 0.2, duration: 1, ease: "easeOut" }}
+      className="mt-4 text-xl md:text-2xl text-slate-100"
+    >Where your projects come to life and your team becomes one</motion.p>
                     <div className='p-2 rounded-3xl backdrop-blur-lg backdrop-opacity-25  hover:bg-slate-100/30 transition duration-200 hover:scale-105  '>
                         <Link to={'/Login'} className='text-white hover:text-white'>Start project</Link>
                     </div>
@@ -54,27 +66,27 @@ function Homepage() {
 
                     <section className='w-2/6'>
 
-                        <motion.div className='ml-6 mx-3 flex flex-col items-center justify-self-end border-2 border-cyan-500 text-black h-full rounded-md '
+                        <motion.div className='ml-6 mx-3 flex flex-col items-center justify-self-end shadow-xl border text-black h-full rounded-md '
                             initial={{ rotateZ: 0 }}
-                            whileInView={{ rotateZ: 5 }}
+                            whileInView={{ rotateZ: 20 }}
                             viewport={{ amount: 0.5 }}
                             transition={{ duration: 2, ease: "easeInOut" }}>
-                            <motion.div className='z-10 bg-white flex flex-col items-center justify-self-end border-2 border-cyan-500 text-black h-full rounded-md '
+                            <motion.div className='z-10 bg-white flex flex-col items-center justify-self-end shadow-xl border text-black h-full rounded-md '
                                 initial={{ rotateZ: 0 }}
                                 whileInView={{ rotateZ: -7 }}
                                 viewport={{ amount: 0.5 }}
                                 transition={{ duration: 2, ease: "easeInOut" }}>
-                                <motion.div className='p-10 z-10 bg-white flex flex-col items-center justify-self-end border-2 border-cyan-500 text-black h-full rounded-md '
+                                <motion.div className='p-10 z-10 bg-white flex flex-col items-center justify-self-end shadow-2xl border text-black h-full rounded-md '
                                     initial={{ rotateZ: 0 }}
                                     whileInView={{ rotateZ: -10 }}
                                     viewport={{ amount: 0.5 }}
                                     transition={{ duration: 2, ease: "easeInOut" }}>
                                     <h1 className='text-2xl font-bold text-center mb-4'>Your Journey</h1>
-                                    <div className='z-20'>
-                                        <p className='text-start pb-1'>Move with vision every step of the way</p>
-                                        <p className='text-start pb-1'>Achieve your goals with confidence</p>
-                                        <p className='text-start pb-1'>Make a difference in your daily progress</p>
-                                    </div>
+                                    <ul className='z-20'>
+                                        <li className='pb-1 font-sans'>Move with vision every step of the way</li>
+                                        <li className='pb-1 font-sans'>Achieve your goals with confidence</li>
+                                        <li className='pb-1 font-sans'>Make a difference in your daily progress</li>
+                                    </ul>
                                 </motion.div>
                             </motion.div>
                         </motion.div>
@@ -126,7 +138,7 @@ function Homepage() {
 
                         </div>
                         <div className='z-0 inset-0 flex items-center justify-center p-4 pointer-events-none my-2'>
-                            <motion.p className='text-black font-heading font-bold text-xl text-center'
+                            <motion.p className='text-slate-800 font-heading font-bold text-xl text-center'
                                 initial={{ x: 0, opacity: 0 }}
                                 whileInView={{ x: 80, opacity: 1 }}
                                 transition={{ duration: 1 }}>
@@ -139,11 +151,11 @@ function Homepage() {
 
                 </div>
                 <div className='pb-12 px-56 fflex items-center justify-center scroll-mt-10'>
-                    <div className='flex flex-col w-2/3 rounded-xl shadow-md py-4 ml-44 font-bold font-heading text-cyan-900 items-center justify-center bg-white'>
+                    <div className='flex flex-col w-2/3 rounded-xl shadow-md py-4 ml-44 font-bold font-heading text-slate-950 text-opacity-85 items-center justify-center bg-white'>
                         <h1 className='my-2'>Ready to streamline your projects?</h1>
                         <p className='mb-2'>Join us today and take your project management to the next level!</p>
                         <div className='p-2 rounded-3xl backdrop-blur-lg backdrop-opacity-35  hover:bg-slate-100/50 transition duration-200 hover:scale-105  '>
-                            <Link to={'/Login'} className='text-cyan-900 font-normal hover:text-cyan-900'>Start project</Link>
+                            <Link to={'/Login'} className='text-slate-900 font-normal hover:text-black'>Start project</Link>
                         </div>
 
                     </div>
