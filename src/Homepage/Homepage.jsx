@@ -19,7 +19,16 @@ function Homepage() {
     const [cardClick, setCardClick] = useState(false);
     const [teamWork, setTeamWork] = useState(false);
 
-
+    const gridVariants = {
+        hidden: {},
+        visible: {
+            transition: { staggerChildren: 0.08 }
+        }
+    };
+    const itemVariants = {
+        hidden: { opacity: 0, y: 100 },
+        visible: { opacity: 1, y: 0 }
+    };
 
     return (
         <>
@@ -28,25 +37,67 @@ function Homepage() {
 
             <div className='container'>
 
-                <div className='pt-20 relative mb-20 flex flex-row  bg-gradient-to-b from-gray-50  to-gray-50'>
+                <div className='pt-28 relative mb-20 flex flex-row  bg-gradient-to-b from-gray-50  to-gray-50'>
 
-                    <div className='z-10 ml-10 flex flex-col items-start justify-center w-1/2'>
+                    <div className='z-10 ml-14 flex flex-col items-start justify-center w-1/2'>
                         <motion.h1 className='text-6xl font-bold text-start text-gray-700 '
                             initial={{ x: -100, opacity: 0 }}
                             whileInView={{ x: 0, opacity: 1 }}
                             viewport={{ amount: 0.5 }}
                             transition={{ duration: 0.8, ease: "easeInOut" }}>Welcome to ProjectHub</motion.h1>
-                        <p className='text-gray-700 py-3 text-3xl font-semibold text-start'>Where your projects come to life and your team becomes one </p>
-                        <div className='p-2 rounded-3xl backdrop-blur-lg backdrop-opacity-25  hover:bg-slate-100/30 transition duration-200 hover:scale-105 flex items-center justify-center '>
-                            <Link to={'/Login'} className='text-gray-700 hover:text-gray-700'>Start project</Link>
-                        </div>
+                        <motion.p className='text-gray-700 py-3 text-3xl font-semibold text-start mt-2 mb-2'
+                            initial={{ y: 30, opacity: 0 }}
+                            whileInView={{ y: 0, opacity: 1 }}
+                            viewport={{ amount: 0.5 }}
+                            transition={{ duration: 0.8, ease: "easeInOut" }}>
+                            Where your projects come to life and your team becomes one </motion.p>
+                        <motion.div className='p-2 ml-40 rounded-3xl backdrop-blur-lg backdrop-opacity-25  hover:bg-slate-100/30 transition duration-200 hover:scale-105 flex items-center justify-center '
+                            initial={{ scale: 0.8, opacity: 0 }}
+                            whileInView={{ x: 50, scale: 1.2, opacity: 1 }}
+                            viewport={{ amount: 0.5 }}
+                            transition={{ duration: 0.1, ease: "easeInOut" }}>
+                            <Link to={'/Login'} className='text-gray-700 hover:text-gray-700 font-bold'>Start project</Link>
+                        </motion.div>
                     </div>
-                    <div className='z-0 inset-0  opacity-75 w-1/2 mr-4 relative grid grid-cols-2 gap-6 grid-rows-2'>
-                        <img src='./assets/chartdata.svg' className='w-5/6 h-5/6 top-0 right-0' />
-                        <img src='./assets/groupwork.svg' className='w-5/6 h-5/6' />
-                        <img src='./assets/on_pc.svg' className='w-5/6 h-5/6 ml-44' />
-
-
+                    <div className='z-0 inset-0 opacity-75 w-1/2 mr-4 relative'>
+                        <motion.div
+                            className="grid grid-cols-2 gap-6 grid-rows-2"
+                            variants={gridVariants}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, amount: 1 }}
+                        >
+                            <motion.img
+                                src='./assets/chartdata.svg'
+                                className='w-5/6 h-5/6 top-0 right-0'
+                                variants={itemVariants}
+                                initial="hidden"
+                                whileInView="visible"
+                                transition={{ duration: 0.5, ease: "easeOut" }}
+                                whileHover={{ scale: 1.03 }}
+                                alt="chart data"
+                            />
+                            <motion.img
+                                src='./assets/groupwork.svg'
+                                className='w-5/6 h-5/6'
+                                variants={itemVariants}
+                                initial="hidden"
+                                whileInView="visible"
+                                transition={{ duration: 0.5, ease: "easeOut" }}
+                                whileHover={{ scale: 1.03 }}
+                                alt="group work"
+                            />
+                            <motion.img
+                                src='./assets/on_pc.svg'
+                                className='w-5/6 h-5/6 ml-44'
+                                variants={itemVariants}
+                                initial="hidden"
+                                whileInView="visible"
+                                transition={{ duration: 0.5, ease: "easeOut" }}
+                                whileHover={{ scale: 1.03 }}
+                                alt="on pc"
+                            />
+                        </motion.div>
                     </div>
                 </div>
 
