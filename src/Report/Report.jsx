@@ -97,7 +97,7 @@ function Report() {
                     </div>
                 </div>
 
-                <div className="chart-container w-3/5 mt-10 mx-14 mb-10">
+                <div className="chart-container mt-10 mx-14 mb-10">
                     <Bar data={{
                         labels: Data.map((data) => data.ProjectTitle),
                         datasets: [
