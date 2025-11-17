@@ -57,12 +57,13 @@ function Login() {
 
     return (
         <div className="h-screen w-full bg-slate-300 flex justify-center items-center">
+            <img src="./assets/OGZR8G0.jpg" className="absolute inset-0 object-cover w-full h-full -z-10" />
             <div className="rounded-full z-0 absolute bg-cyan-700 top-2 right-40 w-60 h-60 shadow-md"></div>
             <div className="rounded-full z-10 absolute bg-cyan-700 top-28 left-56 w-32 h-32 border border-cyan-700 shadow-md"></div>
             <div className="rounded-full z-0 absolute bg-cyan-700 top-2 left-28 w-52 h-52 shadow-md"></div>
             <div className="rounded-full z-0 absolute bg-cyan-700 bottom-2 left-40 w-56 h-56 shadow-md"></div>
             <div className="rounded-full z-0 absolute bg-cyan-700 bottom-24 right-14 w-40 h-40 shadow-md"></div>
-            <div className="inset-0 z-20 relative flex flex-row items-center justify-center bg-gradient-to-bl from-slate-50 via-slate-100 to-slate-200 w-3/5 h-4/5 rounded-md shadow-lg">
+            <div className="inset-0 z-20 relative flex flex-row items-center justify-center bg-gradient-to-bl from-slate-50 via-slate-100 to-slate-200 w-3/5 h-4/5 rounded-xl shadow-lg">
                 <motion.div className={`w-1/2 top-0 left-0 items-center justify-center bg-cyan-700 h-full p-6 ${isOpen ? 'z-10' : 'z-0'}`}
                     animate={{ x: isOpen ? '100%' : '0%' }}
                     transition={{ duration: 0.45, ease: "easeInOut" }}>

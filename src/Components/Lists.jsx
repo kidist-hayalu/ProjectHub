@@ -13,7 +13,7 @@ function Lists() {
     const navBarItems = navBar.map((bar) => <li key={bar.id} className="navBarItems hover:scale-110"><Link to={bar.Link}>{bar.name}</Link></li>);
 
     const [notification, setNotification] = useState(false);
-    const [profile, setProfile] = useState(false);
+    const [profile, setProfile] = useState(true);
     const [settings, setSettings] = useState(false);
 
     return (<>
@@ -36,7 +36,7 @@ function Lists() {
                             <User size={18} />
                         </div>
 
-                        <p className="ml-1 text-base hover:cursor-pointer hover:scale-110" onClick={() => setProfile(!profile)}>Profile</p>
+                        <p className="ml-1 text-base hover:cursor-pointer hover:scale-110" onMouseEnter={() => setProfile(true)} onMouseLeave={()=> setProfile(false)}>Profile</p>
                         {profile && <div className="absolute top-12 right-16 w-48 bg-white border border-gray-300 rounded shadow-lg p-4">
                             <p className="font-bold mb-2">User Name</p>
                             <p className="text-sm text-gray-600 mb-4">User Email</p>
@@ -44,13 +44,13 @@ function Lists() {
                         </div>
 
                         <div>
-                            <img src="/assets/gear-solid-full.svg" alt="Settings Icon" className="relative w-6 h-6 mr-4 hover:cursor-pointer hover:scale-110" onClick={() => setSettings(!settings)} />
+                            <img src="/assets/gear-solid-full.svg" alt="Settings Icon" className="relative w-6 h-6 mr-4 hover:cursor-pointer hover:scale-110" onClick={() => setSettings(!settings)} onMouseLeave={() => setSettings(false)} />
                         </div>
                         {settings &&
                             <div className="absolute top-12 right-12 w-48 bg-white border border-gray-300 rounded shadow-lg p-4">
                                 <p>Settings Menu</p></div>}
                         <div>
-                            <img src="/assets/bell-solid-full.svg" alt="Notifications Icon" className="relative w-6 h-6 mr-4 hover:cursor-pointer hover:scale-110" onClick={() => setNotification(!notification)} />
+                            <img src="/assets/bell-solid-full.svg" alt="Notifications Icon" className="relative w-6 h-6 mr-4 hover:cursor-pointer hover:scale-110" onClick={() => setNotification(!notification)} onMouseLeave={() => setNotification(false)}/>
                         </div>
                         {notification &&
                             <div className="absolute top-12 right-0 w-64 bg-white border border-gray-300 rounded shadow-lg p-4">

@@ -70,30 +70,18 @@ function Homepage() {
                             <motion.img
                                 src='./assets/chartdata.svg'
                                 className='w-5/6 h-5/6 top-0 right-0'
-                                variants={itemVariants}
-                                initial="hidden"
-                                whileInView="visible"
-                                transition={{ duration: 0.5, ease: "easeOut" }}
                                 whileHover={{ scale: 1.03 }}
                                 alt="chart data"
                             />
                             <motion.img
                                 src='./assets/groupwork.svg'
                                 className='w-5/6 h-5/6'
-                                variants={itemVariants}
-                                initial="hidden"
-                                whileInView="visible"
-                                transition={{ duration: 0.5, ease: "easeOut" }}
                                 whileHover={{ scale: 1.03 }}
                                 alt="group work"
                             />
                             <motion.img
                                 src='./assets/on_pc.svg'
                                 className='w-5/6 h-5/6 ml-44'
-                                variants={itemVariants}
-                                initial="hidden"
-                                whileInView="visible"
-                                transition={{ duration: 0.5, ease: "easeOut" }}
                                 whileHover={{ scale: 1.03 }}
                                 alt="on pc"
                             />
@@ -112,7 +100,7 @@ function Homepage() {
 
                     </div>
                 </motion.div>*/}
-                <div className='flex flex-row pr-20  mt-60 mb-52 scroll-mt-40' id='About'>
+                <div className='flex flex-row pr-20  mt-60 mb-60 scroll-mt-40' id='About'>
                     <div className='relative p-0 h-full flex flex-col items-center justify-center rounded-md mr-52 w-4/6'>
                         <Stacks />
                         <p className='absolute inset-0 z-50 text-slate-50 flex items-center justify-center text-center'>Create your own team and plan together<br />with our intuitive project management tools</p>
@@ -146,12 +134,9 @@ function Homepage() {
                         </motion.div>
                     </section>
                 </div>
-                <div className='flex flex-col justify-center items-center mt-10 mb-20 scroll-mt-10' id='Community'>
-                    <h1 className='w-1/2 text-center mx-10 mt-10 mb-14 font-heading font-semibold text-2xl' style={{ lineHeight: '2' }}>Our Platform Is Designed to help you manage your projects with ease and efficiency, from initial planning to final delivery.</h1>
-                    <motion.div className='flex flex-row justify-center items-center px-12'
-                        initial={{ opacity: 0, x: 100, y: 50 }}
-                        whileInView={{ opacity: 1, x: 0, y: 0 }}
-                        transition={{ duration: 1 }}>
+                <div className='flex flex-col justify-center items-center mt-10 mb-52 scroll-mt-10' id='Community'>
+                    <h1 className='w-1/2 text-center mx-10 mt-10 mb-16 font-heading font-semibold text-2xl' style={{ lineHeight: '2' }}>Our Platform Is Designed to help you manage your projects with ease and efficiency, from initial planning to final delivery.</h1>
+                    <div className='flex flex-row justify-center items-center mt-8 px-12'>
                         <div className='p-12 flex flex-col justify-start items-start bg-white rounded-lg shadow-lg mx-4 hover:shadow-xl transition-shadow duration-200'>
                             <img src="../assets/circle-check-regular-full.svg" alt="Task Management" className="mb-2 w-10 h-10" />
                             <h1 className='font-semibold py-3 font-heading text-lg'>Task Management</h1>
@@ -162,18 +147,20 @@ function Homepage() {
                             <h1 className='font-semibold py-3 font-heading text-lg'>Real-time Collaboration</h1>
                             <p>Work together with your team in real-time, share updates, and get feedback instantly.</p>
                         </div>
-                        <div className='p-12 flex flex-col justify-start items-start bg-white rounded-lg shadow-lg mx-4'>
+                        <div className='p-12 flex flex-col justify-start items-start bg-white rounded-lg shadow-lg mx-4 hover:shadow-xl transition-shadow duration-200'>
                             <img src="../assets/chart-simple-solid-full.svg" alt="Task Management" className="mb-2 w-10 h-10" />
                             <h1 className='font-semibold font-heading py-3 text-lg'>Insightful Analytics</h1>
                             <p>Gain valuable insights into your project’s progress with our analytics tools.</p>
                         </div>
-                    </motion.div>
+                    </div>
                 </div>
-                <div className='flex flex-row h-screen px-6 scroll-mt-10' id='Services'>
+                <div className='flex flex-row h-screen px-6 mb-16 scroll-mt-10' id='Services'>
                     <div className='py-10 flex flex-row w-full'>
 
                         <div className="relative mt-2 flex items-center justify-center w-1/2 overflow-visible">
-                            <div className="absolute inset-0 z-10 bg-cyan-900 w-full h-full origin-left shadow-md transition transform duration-700 hover:scale-x-[2]" onMouseEnter={() => setCardClick(true)} onMouseLeave={() => setCardClick(false)}></div>
+                            <div className="absolute inset-0 z-10 bg-cyan-900 w-full h-full origin-left shadow-md transition transform duration-700 hover:scale-x-[2]" onMouseEnter={() => setCardClick(true)} onMouseLeave={() => setCardClick(false)}>
+                                <p className='relative inset-0 justify-end text-white '>Track Your Progress With Our Charts </p>
+                            </div>
 
 
                             <div className="absolute inset-0 z-[15] bg-cyan-800 w-3/4 h-full origin-left transition transform duration-700 shadow-md hover:scale-x-[2.67]"></div>
@@ -204,7 +191,7 @@ function Homepage() {
                     </div>
 
                 </div>
-                <div className='pb-12 px-56 fflex items-center justify-center scroll-mt-10'>
+                <div className='pb-12 px-56 fflex items-center justify-center scroll-mt-10 mb-14'>
                     <div className='flex flex-col w-2/3 rounded-xl shadow-md py-4 ml-44 font-bold font-heading text-slate-950 text-opacity-85 items-center justify-center bg-white'>
                         <h1 className='my-2'>Ready to streamline your projects?</h1>
                         <p className='mb-2'>Join us today and take your project management to the next level!</p>
