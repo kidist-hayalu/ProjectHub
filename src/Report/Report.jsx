@@ -80,8 +80,13 @@ function Report() {
                         <Column field="tasks" header="Tasks" sortable  />
                     </DataTable>
                     </div>
-                    <div className="w-3/5" >
-                        <Line data={{
+                    
+                    </div>
+                </div>
+
+                <div className="chart-container mt-10 mx-14 mb-10 flex flex-row w-full items-center justify-center">
+                    <div className="w-1/2" >
+                        <Line className="w-full" data={{
                             labels: dat,
                             datasets: [
                                 {
@@ -94,11 +99,8 @@ function Report() {
                             ]
                         }}/>
                     </div>
-                    </div>
-                </div>
-
-                <div className="chart-container mt-10 mx-14 mb-10">
-                    <Bar data={{
+                    <div className="w-1/2">
+                    <Bar className="w-full mr-32" data={{
                         labels: Data.map((data) => data.ProjectTitle),
                         datasets: [
                             {
@@ -114,6 +116,7 @@ function Report() {
                             }
                         ]
                     }}/>
+                    </div>
                 </div>
             </div>
         </>

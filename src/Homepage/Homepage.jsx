@@ -37,7 +37,7 @@ function Homepage() {
 
             <div className='container'>
 
-                <div className='pt-28 relative mb-20 flex flex-row  bg-gradient-to-b from-gray-50  to-gray-50'>
+                <div className='pt-28 relative mb-20 flex flex-row mt-12 bg-gradient-to-b from-gray-50  to-gray-50'>
 
                     <div className='z-10 ml-14 flex flex-col items-start justify-center w-1/2'>
                         <motion.h1 className='text-6xl font-bold text-start text-gray-700 '
@@ -167,14 +167,10 @@ function Homepage() {
                             <div className="absolute inset-0 z-20 bg-cyan-700 w-2/4 h-full origin-left transition transform duration-700 shadow-md hover:scale-x-[4]"></div>
                             <div className="absolute z-[25] inset-0  p-4 bg-cyan-600 w-1/4 h-full origin-left transform transition duration-700  hover:shadow-lg hover:scale-x-[8]" onMouseEnter={() => setTeamWork(true)} onMouseLeave={() => setTeamWork(false)}></div>
                             <div className={`absolute top-8 left-3/4 ml-2 items-center bg-white mr-4 w-full z-30 transition-opacity duration-200 ${cardClick ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
-                                <div className=' h-full rounded shadow p-2'>
-                                    <Chart className="h-full text-white" />
-                                </div>
+                                
                             </div>
                             <div className={`absolute top-8 left-3/4 ml-2 items-center mr-4 bg-white w-full z-40 transition-opacity duration-200 ${teamWork ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
-                                <div className=' h-full rounded shadow p-2'>
-                                    <Chart className="h-full text-white" />
-                                </div>
+                                
                             </div>
 
                         </div>
