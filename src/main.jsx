@@ -11,6 +11,7 @@ import Chart from "./Report/Chart.jsx"
 import Login from './SignIn/Login.jsx'
 import Homepage from './Homepage/Homepage.jsx'
 import Teams from './Teams/Teams.jsx'
+import Chats from './Chats/Chats.jsx'
 
 const router = createBrowserRouter([
   {path: "/", element: <Homepage />},
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
   {path: "/Report", element:<Report />},
   {path: "/Chart", element: <Chart />},
   {path: "/Teams", element: <Teams />},
+  {path: "/Chats", element: <Chats />},
   {path: "*", element: <NotFound />}
 ]);
 
