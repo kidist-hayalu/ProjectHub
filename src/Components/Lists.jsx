@@ -33,7 +33,7 @@ function Lists() {
                     <div className="flex flex-row items-center mr-20">
                         <div className="flex flex-row items-center mr-3">
                         <div className="bg-cyan-500 rounded-full p-1 ">
-                            <User size={18} />
+                            <User size={18} className="text-white"/>
                         </div>
 
                         <p className="ml-1 text-base hover:cursor-pointer hover:scale-110" onClick={() => setProfile(true)} onMouseLeave={()=> setProfile(false)}>Profile</p>

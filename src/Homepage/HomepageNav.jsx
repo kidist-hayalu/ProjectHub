@@ -29,7 +29,7 @@ function HomepageNav() {
                         <div className="flex flex-row items-center justify-center mr-24">
                             <div className="flex flex-row items-center ">
                                 <div className="bg-cyan-500 rounded-full p-1 ">
-                                    <User size={18} />
+                                    <User size={18} className="text-white"/>
                                 </div>
 
                                 <div className="ml-1 text-base hover:cursor-pointer hover:scale-110">

@@ -64,7 +64,7 @@ function Login() {
             <div className="rounded-full z-0 absolute bg-cyan-700 bottom-2 left-40 w-56 h-56 shadow-md"></div>
             <div className="rounded-full z-0 absolute bg-cyan-700 bottom-24 right-14 w-40 h-40 shadow-md"></div>
             <div className="inset-0 z-20 relative flex flex-row items-center justify-center bg-gradient-to-bl from-slate-50 via-slate-100 to-slate-200 w-3/5 h-4/5 rounded-xl shadow-lg">
-                <motion.div className={`w-1/2 top-0 left-0 items-center justify-center bg-cyan-700 h-full p-6 ${isOpen ? 'z-10' : 'z-0'}`}
+                <motion.div className={`w-1/2 top-0 left-0 items-center justify-center bg-gradient-to-br from-cyan-700 via-cyan-500 to-cyan-300 h-full p-6 ${isOpen ? 'z-10' : 'z-0'}`}
                     animate={{ x: isOpen ? '100%' : '0%' }}
                     transition={{ duration: 0.45, ease: "easeInOut" }}>
                     <div className="w-full h-full flex flex-col items-center justify-center  shadow-xl rounded-lg bg-white/25">
